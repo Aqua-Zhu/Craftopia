@@ -1,0 +1,1319 @@
+@use './reset';
+@use './variables' as *;
+@use './function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+
+/* 共用設定 */
+body {
+    font-family: "Noto Sans TC", sans-serif;
+    // font-weight: 500;
+    letter-spacing: 2px;
+    // background-image: url(./images/BG-texture-400.jpg);
+}
+
+#memberArea {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    //不能在全區標籤使用overflow-x: hidden; 會害sticky失效
+
+}
+
+#member,
+#reserve,
+#memberLike,
+#member-experience {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 15%;
+}
+
+
+// 圖片標題-手寫字
+.title {
+    margin: 24px 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+// 看全部按鈕
+.btn-area {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 24px;
+    margin-top: 80px;
+
+    .seemore-Btn {
+        display: flex;
+        align-items: center;
+        position: relative;
+        font-weight: bold;
+
+        .font {
+            z-index: 10;
+        }
+
+        .arr {
+            width: 24px;
+            height: 24px;
+            margin-left: 12px;
+            z-index: 10;
+        }
+
+        .ball {
+            position: absolute;
+            width: 36px;
+            height: 36px;
+            left: -20px;
+        }
+
+
+        &:hover {
+
+            .ball {
+                transition: .8s;
+                filter: hue-rotate(30deg) brightness(140%);
+                transform: translateX(92px);
+            }
+        }
+
+        &.shot {
+            .ball {
+                filter: hue-rotate(30deg) brightness(140%);
+                transition: .7s cubic-bezier(.3, 1.77, .36, .69)
+                    /*cubic-bezier(.5,2.77,.25,.35)*/
+                ;
+                transform: translateX(162px);
+            }
+
+            .transform-delay {
+                transition: .4s;
+                transform: translateX(65px);
+            }
+
+            .transform-delay2 {
+                transition: .3s;
+                opacity: 0;
+            }
+
+        }
+    }
+}
+
+/* 會員資料區 */
+#member {
+    position: relative;
+    z-index: 10;
+
+    .memberWrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        /* 編輯按鈕統一設定 */
+        .icon-edit {
+            width: 24px;
+            height: 24px;
+            margin-left: 10px;
+            cursor: pointer;
+
+            &:hover {
+                @include aniPen;
+            }
+        }
+
+        /* 會員簡歷 */
+        .resume {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-right: 20%;
+
+
+            .avatarBox {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                .avatar {
+                    position: relative;
+                    margin: 40px;
+
+                    .camera {
+                        width: 50px;
+                        height: 50px;
+                        padding: 8px;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+
+                        background-color: #E3E3E3;
+                        border-radius: 50%;
+                        cursor: pointer;
+
+                        >img {
+                            width: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+                    .ava-photo {
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        border: 3px solid #E3E3E3;
+
+                        >img {
+                            width: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .name-default {
+                    font-size: 1.5rem;
+                    font-weight: 700;
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 40px;
+
+                    input {
+                        font-size: 1rem;
+                        padding: 10px;
+                        border-radius: 6px;
+                        border: none;
+
+                        &:focus {
+                            outline: 2px solid #483D3F;
+                            background-color: #feebba;
+                        }
+                    }
+                }
+            }
+
+
+            .member-level {
+                // background-color: antiquewhite;
+                padding: 33px 16px;
+                position: relative;
+                line-height: 170%;
+
+                .level-count {
+                    margin-top: 16px;
+                }
+
+                span {
+                    font-weight: 400;
+                    color: #625759;
+                }
+
+                &::before {
+                    content: "";
+                    background-image: url(./images/Vector-line.svg);
+                    background-repeat: repeat;
+                    background-position: center;
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                &::after {
+                    content: "";
+                    background-image: url(./images/Vector-line.svg);
+                    background-repeat: repeat;
+                    // background-position: center;
+                    width: 100%;
+                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+            }
+        }
+
+        /* 會員資料盒子 */
+        .memberInformation {
+            // border: 1px solid #483D3F;
+            width: 100%;
+
+            //btn共用-修改密碼、確認修改
+            .memberBtn {
+                border: 0;
+                color: white;
+                background-color: #483D3F;
+                font-size: 1rem;
+                padding: 14px 24px;
+                border-radius: 99px;
+                cursor: pointer;
+                transition: all 0.4s ease-in-out;
+
+                &:hover {
+                    background-color: #78686B;
+                }
+            }
+
+            // 確認按鈕區
+            .confirm-btn {
+                margin: 24px 0;
+                display: flex;
+                gap: 24px;
+
+                //btn-取消
+                .cancel-btn {
+                    color: #483D3F;
+                    background-color: transparent;
+                    border: 2px solid #483D3F;
+                    font-size: 1rem;
+                    padding: 14px 24px;
+                    border-radius: 99px;
+                    cursor: pointer;
+
+                    &:hover {
+                        border: 2px solid #78686B;
+                        color: #78686B;
+                    }
+                }
+            }
+
+            // 會員基本資料
+            .info {
+
+                .dataBox {
+                    background-color: $color-white-60;
+                    border-radius: 10px;
+                    padding: 20px 40px 40px 40px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 12px;
+
+                    .data {
+                        position: relative;
+                        padding: 16px;
+
+                        .data-edit {
+                            .error {
+                                font-size: .9rem;
+                                margin-left: 12px;
+                                color: $color-brown-primary;
+                            }
+
+                            input {
+                                font-size: 1rem;
+                                margin-top: 14px;
+                                padding: 10px;
+                                border-radius: 6px;
+                                border: none;
+                                outline: 2px dotted #483D3F;
+
+                                &::placeholder {
+                                    color: #888;
+                                }
+
+                                &:focus {
+                                    outline: 2px solid #483D3F;
+                                    background-color: #feebba;
+                                }
+                            }
+
+                        }
+
+                        .data-text {
+                            font-size: 1.2rem;
+                            margin-top: 24px;
+                        }
+
+                        &::after {
+                            content: "";
+                            background-image: url(./images/Vector-line2.svg);
+                            background-repeat: repeat;
+                            background-position: left;
+                            width: 100%;
+                            height: 3px;
+                            position: absolute;
+                            bottom: 0px;
+                            left: -1px;
+                        }
+                    }
+
+
+
+
+                }
+            }
+
+            /* 修改密碼區 */
+            #password {
+                margin-top: 80px;
+
+
+
+                .memberBtn.change-password {
+                    opacity: 0.8;
+                    background-color: #78686B;
+                    cursor: default;
+                }
+
+                .title {
+                    h2 {
+                        margin-right: 48px;
+                    }
+                }
+
+                // 表單最外層
+                .form-container {
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: max-height 0.8s ease-out;
+
+                    #password-form2 {
+                        display: flex;
+                        flex-direction: column;
+                        padding: 0 4px;
+
+                        label {
+                            margin: 16px 0;
+                        }
+
+                        input,
+                        textarea {
+                            color: #483D3F;
+                            padding: 10px;
+                            border-radius: 6px;
+                            font-size: 1rem;
+                            border: none;
+                            outline: 2px dotted #483D3F;
+
+                            &::placeholder {
+                                color: #888;
+                            }
+
+                            &:focus {
+                                outline: 2px solid #483D3F;
+                                background-color: #feebba;
+                            }
+                        }
+                    }
+                }
+
+                // 表單最外層-展開
+                .form-container.show {
+                    max-height: 500px;
+                }
+
+
+            }
+
+        }
+    }
+}
+
+/* 資料區-平板 */
+@media ($mediaMd) {
+    #member {
+        .memberWrap {
+            display: flex;
+            flex-direction: column;
+
+            .resume {
+                display: flex;
+                flex-direction: row;
+                margin: 0;
+                margin-bottom: 40px;
+            }
+        }
+    }
+}
+
+/* 資料區-手機 */
+@media ($mediaSm) {
+    #memberArea>#member {
+        padding: 5% 8%;
+
+        .memberWrap {
+            .resume {
+                flex-direction: column;
+                margin: auto;
+                margin-bottom: 40px;
+            }
+
+            .memberInformation {
+                .info {
+                    .dataBox {
+                        padding: 20px;
+                    }
+                }
+
+                #password {
+                    .title {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+/* 預約記錄區 */
+#reserve {
+    position: relative;
+    z-index: 10;
+
+    .title {
+        width: 70%;
+        max-width: 1000px;
+    }
+
+    // 列表區
+    .reserve-cardsBox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+
+        // 單一卡片
+        .reserve-row {
+            display: flex;
+            flex-direction: row-reverse;
+            background-color: $color-white-60;
+            border-radius: 10px;
+            overflow: hidden;
+
+            align-items: center;
+            height: 240px;
+            position: relative;
+
+            &:hover {
+                .tag-state {
+                    @include aniBounce;
+                }
+            }
+
+
+            .rowIMG {
+                width: 30%;
+                height: 100%;
+
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .reserve-content {
+                width: 70%;
+                height: 100%;
+                padding: 20px 20px 20px 60px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .txt {
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    .tag-state {
+                        background-image: url(./images/icon-tag/tag-upcoming.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        padding: 15px;
+                        color: white;
+                        font-size: 0.85rem;
+                        margin-bottom: 20px;
+                    }
+
+                    h3 {
+                        font-size: 1.25rem;
+                        margin-bottom: 20px;
+                    }
+
+                    .class-item {
+                        color: $color-neutral-60;
+                    }
+                }
+            }
+
+            .buttonWrap {
+                position: absolute;
+                right: 20px;
+                bottom: 20px;
+                white-space: pre-line;
+
+                .btn-reserve {
+                    border: 0;
+                    color: $color-coffee-primary;
+                    background-color: $color-white-80;
+                    font-size: 1rem;
+                    font-weight: $font-weight-bold;
+                    border-radius: 99px;
+                    padding: 14px 24px;
+                    cursor: pointer;
+                    transition: all 0.4s ease-in-out;
+
+                    &:hover {
+                        background-color: $color-brown-dark;
+                        color: #fff;
+
+                    }
+                }
+            }
+        }
+
+        .reserve-row.finish {
+            >.reserve-content .txt .tag-state {
+                background-image: url(./images/icon-tag/tag-completed.svg);
+                padding: 10px 15px;
+            }
+
+            .rowIMG {
+                filter: brightness(40%) sepia(50%);
+            }
+        }
+    }
+}
+
+/* 預約-平板 */
+@media ($mediaMd) {
+    #memberArea>#reserve {
+        padding: 5% 8%;
+
+        .reserve-cardsBox {
+
+            .reserve-row,
+            .reserve-row.finish {
+                // border-radius: 40px;
+
+                .reserve-content {
+                    padding: 40px;
+                }
+
+                .buttonWrap {
+                    white-space: pre-line;
+                }
+            }
+        }
+
+    }
+}
+
+/* 預約-手機 */
+@media ($mediaSm) {
+    #memberArea>#reserve {
+        .reserve-cardsBox {
+
+            .reserve-row,
+            .reserve-row.finish {
+                flex-direction: column;
+                height: auto;
+                box-shadow:
+                    2px 2px 10px rgba(72, 61, 63, 0.4);
+
+                .rowIMG {
+                    width: 100%;
+                    height: 180px;
+                }
+
+                .reserve-content {
+                    width: 100%;
+                    padding: 20px;
+                }
+
+                .buttonWrap {
+                    position: relative;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+        }
+    }
+}
+
+
+/* 收藏區 */
+#memberArea>#memberLike {
+    min-width: 1100px;
+
+    .card-area {
+        display: flex;
+        justify-content: space-between;
+        gap: 8%;
+
+        .classCard {
+            position: relative;
+            width: 100%;
+            height: auto;
+
+            div {
+
+                display: flex;
+                justify-content: space-between;
+            }
+
+            .classPhoto {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                overflow: hidden;
+                clip-path: polygon(47% 0, 76% 0, 100% 0, 100% 66%, 100% 100%, 41% 100%, 0 100%, 0 66%, 0 29%, 0 0);
+                transition: clip-path 0.5s ease;
+
+                .tagHotorNew {
+                    position: absolute;
+                    left: 4px;
+                    top: 4px;
+                    z-index: 10;
+                    opacity: 1;
+                    transition: opacity 0.5s ease;
+
+                    img {
+                        width: 52px;
+                    }
+                }
+
+                .photo {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: cover;
+                }
+
+
+                p {
+                    font-family: "Braah One", serif;
+                    color: #F0E4C6;
+                    font-size: 18px;
+                    font-weight: 400;
+                    z-index: 10;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(66, 66, 66, 0.6);
+                    opacity: 0;
+                    transition: all 0.5s ease-in-out;
+
+
+                    img {
+                        width: 24px;
+                    }
+                }
+            }
+
+
+            .classTag {
+                margin: 20px 0;
+                justify-content: left;
+
+                p {
+                    color: #ffffff;
+                    font-size: 13px;
+                    margin-right: 12px;
+                }
+
+                .classLevel {
+                    background-image: url(./images/tag-level.svg);
+                    padding: 7px 16px 8px;
+                }
+
+                .classTime {
+                    background-image: url(./images/tag-time.svg);
+                    padding: 5px 17.5px 4px 13px;
+                }
+            }
+
+
+            .classTitle {
+                align-items: start;
+                margin-bottom: 24px;
+                height: 56px;
+
+
+                h3 {
+                    font-size: 18px;
+                    font-weight: 600;
+                    margin-right: 4px;
+
+                    @extend %line-multiple;
+                    -webkit-line-clamp: 2;
+                    line-clamp: 2;
+
+                    a {
+                        border-bottom: 2px solid transparent;
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover {
+                            color: #565656;
+                            border-bottom: 2px solid #B07662;
+                        }
+                    }
+                }
+
+
+                img {
+                    width: 24px;
+                }
+            }
+
+
+            .classPrice {
+
+                align-items: center;
+                height: 34px;
+
+                .classStoreName {
+                    color: #5a5a5a;
+                    font-size: 16px;
+                    width: 130px;
+
+                    @extend %line-multiple;
+                    -webkit-line-clamp: 1;
+                    line-clamp: 1;
+
+
+                    a {
+                        transition: all 0.5s ease-in-out;
+
+                        &:hover {
+                            color: #939393;
+
+                        }
+                    }
+                }
+
+
+                .price {
+                    color: #483D3F;
+                    font-size: 22px;
+
+                }
+            }
+
+
+
+
+
+            &:hover {
+                .classPhoto {
+                    clip-path: polygon(40% 0, 73% 4%, 92% 33%, 89% 75%, 77% 94%, 48% 100%, 17% 95%, 6% 76%, 5% 39%, 15% 10%);
+
+                    &:hover {
+                        p {
+                            opacity: 1;
+
+                            img {
+                                animation: moveArrow 0.6s ease-in-out infinite alternate;
+                            }
+                        }
+                    }
+                }
+
+                .tagHotorNew {
+                    opacity: 0;
+                }
+            }
+        }
+
+
+        @keyframes moveArrow {
+            0% {
+                transform: translateX(0);
+
+            }
+
+
+            100% {
+                transform: translateX(10px);
+
+            }
+        }
+
+    }
+}
+
+/* 收藏-平板 */
+@media ($mediaMd) {
+    #memberArea>#memberLike {
+        min-width: 100%;
+        padding: 5% 8%;
+
+        .card-area .classCard:last-child {
+            display: none;
+        }
+    }
+}
+
+// /* 收藏-手機 */
+@media ($mediaSm) {
+    #memberLike {
+        .card-area {
+            flex-direction: column;
+        }
+    }
+}
+
+
+/* 心得區 */
+#member-experience {
+    align-items: center;
+    background-image: url(./images/expBlob-1.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-bottom: 300px;
+    // position: relative;
+    z-index: 50;
+
+    .modalReview-overlay {
+        position: fixed;
+        z-index: 9998;
+    }
+
+    .expWrapper {
+        width: 100%;
+        max-width: 1000px;
+        display: flex;
+        flex-direction: column;
+
+
+        .expTitle {
+            display: flex;
+            align-items: center;
+            padding: 0 20%;
+            margin-bottom: 60px;
+
+            .expHeader {
+                width: 100%;
+                height: 80px;
+                flex: 1;
+            }
+
+            .btn-area {
+                margin-top: 0;
+            }
+        }
+
+        .newestExp {
+
+            .Exp {
+                height: 300px;
+                display: flex;
+                margin: 40px 12px;
+                align-items: center;
+
+
+                &:hover {
+                    cursor: pointer;
+                    background-color: $color-white-60;
+                    box-shadow:
+                        2px 2px 10px rgba(72, 61, 63, 0.4);
+                    border-radius: 10px;
+                    overflow: hidden;
+
+
+                    .expPic {
+                        border-radius: 0;
+                        transform: scale(1);
+
+                    }
+                }
+
+                .expPic {
+                    width: 400px;
+                    height: 100%;
+                    border-radius: 5% 5%;
+                    overflow: hidden;
+                    transition: all .2s ease-in-out;
+
+                    img {
+                        object-fit: cover;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+
+
+                .expContent {
+                    padding: 30px 30px 30px 65px;
+                    flex: 1;
+                    min-width: 300px;
+
+
+
+                    .expInfo {
+                        display: flex;
+
+                        p {
+                            margin: 0 20px;
+                            font-size: 1.25rem;
+                        }
+
+                        img {
+                            height: 40px;
+                            width: auto;
+                        }
+                    }
+
+                    .expDate {
+                        display: flex;
+                        flex-direction: column;
+                        margin: 10px 0;
+
+                        p {
+                            //日期
+                            color: #5A5A5A;
+                            font-size: 0.85rem;
+                        }
+
+                        span {
+                            margin: 0 10px;
+                        }
+
+                        .expItem {
+                            // 單行省略
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: nowrap;
+                        }
+                    }
+                }
+
+                .expTxt {
+                    // border: 1px solid tomato;
+                    font-weight: 400;
+                    line-height: 170%;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 4;
+                    line-clamp: 4;
+                    overflow: hidden;
+                    margin-top: 24px;
+
+                }
+
+            }
+        }
+    }
+}
+
+/* 心得-平板 */
+@media ($mediaMd) {
+    #memberArea>#member-experience {
+        padding: 5% 8%;
+
+        .expWrapper .newestExp .Exp {
+            height: 240px;
+
+            .expPic {
+                width: 240px;
+            }
+
+            .expContent {
+                min-width: 300px;
+
+                .expTxt {
+                    -webkit-line-clamp: 3;
+                    line-clamp: 3;
+                }
+            }
+        }
+    }
+}
+
+/* 心得-手機 */
+@media ($mediaSm) {
+    #memberArea>#member-experience {
+        margin-bottom: 0;
+
+        .expWrapper {
+            .expTitle {
+                padding: 0;
+                margin: 24px 0;
+                flex-direction: column;
+                height: 100%;
+
+                .expHeader {
+                    flex: none;
+                }
+
+                .btn-area {
+                    margin-top: 24px;
+                }
+            }
+
+        }
+
+        .classExpWrapper {
+            .newestExp {
+                .Exp {
+                    display: flex;
+                    flex-direction: column;
+                    height: 420px;
+                    width: 100%;
+                    background-color: $color-white-60;
+                    box-shadow:
+                        2px 2px 10px rgba(72, 61, 63, 0.4);
+                    border-radius: 10px;
+                    overflow: hidden;
+                    width: 340px;
+
+                    .expPic {
+                        height: 180px;
+                        width: 100%;
+                        border-radius: 0;
+                    }
+
+                    .expContent {
+                        padding: 20px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/* 泡泡區 */
+.bg-blob {
+    z-index: -2;
+
+    .infoBlob1 {
+        position: absolute;
+        width: 500px;
+        height: fit-content;
+        left: -4%;
+        top: 5%;
+        @include aniFloat;
+    }
+
+    .infoBlob2 {
+        position: absolute;
+        width: 250px;
+        height: fit-content;
+        right: -5%;
+        top: 3%;
+        @include aniFloat;
+        // @include aniFloatRotate(-20deg);
+    }
+
+    .infoBlob2.left-white {
+        fill: white;
+        left: -5%;
+        top: 28%;
+    }
+
+    .infoBlob1.left-red {
+        opacity: 0.8;
+        left: -8%;
+        top: 32%;
+        @include aniFloatRotate(30deg);
+    }
+
+    .right-yelllow {
+        position: absolute;
+        fill: $color-gold-primary;
+        top: 25%;
+        right: -10%;
+        width: 600px;
+        @include aniFloat;
+    }
+
+    .right-brown {
+        position: absolute;
+        fill: $color-coffee-primary;
+        opacity: 0.6;
+        top: 32%;
+        right: -3%;
+        width: 200px;
+        height: fit-content;
+        // @include aniFloat;
+        @include aniFloatRotate(60deg);
+    }
+
+    .infoBlob3 {
+        position: absolute;
+        width: 350px;
+        height: fit-content;
+        right: -10%;
+        top: 8%;
+        @include aniFloat;
+    }
+
+    .expBlob2 {
+        position: absolute;
+        width: 200px;
+        height: fit-content;
+        right: 5%;
+        top: 12%;
+        @include aniFloat;
+    }
+
+    .expBlob3 {
+        position: absolute;
+        width: 350px;
+        height: fit-content;
+        left: -2%;
+        bottom: 2%;
+        rotate: 330deg;
+        @include aniFloat;
+    }
+}
+
+@media ($mediaSm) {
+    .bg-blob {
+
+        .infoBlob1,
+        .infoBlob2,
+        .infoBlob3,
+        .infoBlob2.left-white,
+        .infoBlob1.left-red,
+        .right-yelllow,
+        .right-brown {
+            width: 200px;
+        }
+
+        .right-brown {
+            top: 45%;
+        }
+
+        .right-yelllow {
+            top: 30%;
+        }
+
+        .infoBlob1.left-red {
+            top: 38%;
+        }
+    }
+}
+
+
+
+/* 頁尾區 */
+footer {
+    background-color: #483D3F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    .footer-bgDeco {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        img {
+            position: absolute;
+            bottom: -1px;
+        }
+    }
+
+
+    .foot-content {
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 5%;
+        width: 100%;
+
+
+
+        img {
+            width: 338px;
+            height: 72px;
+        }
+    }
+
+    .menu {
+        display: flex;
+        text-align: center;
+
+
+        >li {
+            width: 6rem;
+            margin: 0 10px;
+            font-size: 0.85rem;
+            font-weight: 400;
+
+            ul {
+                margin: 15px 0;
+
+                >li {
+                    padding: 4px 0;
+                }
+            }
+        }
+    }
+
+    a,
+    li,
+    small {
+        color: white;
+    }
+
+
+    small {
+        margin-bottom: 50px;
+        font-size: 0.8rem;
+    }
+}
+
+/*頁尾區-平板*/
+@media ($mediaMd) {
+    footer {
+        .foot-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .menu {
+                margin-top: 40px;
+            }
+        }
+    }
+}
+
+/* 頁尾區-手機 */
+@media ($mediaSm) {
+    footer {
+        display: none;
+    }
+}
+
+/*固定彈跳視窗在頁面上方*/
+.modal-overlay {
+    position: fixed;
+    /* 固定在螢幕上 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明背景 */
+    display: flex;
+    /* 使用 flex 使內容居中 */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* 確保它在頁面最上層 */
+}

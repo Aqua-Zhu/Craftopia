@@ -1,0 +1,177 @@
+// 字級
+$font-size-xs:10px;
+$font-size-s:12px;
+$font-size-m:14px;
+$font-size-xm:16px;
+$font-size-l:18px;
+$font-size-xl:20px;
+$font-size-xxl:22px;
+$font-size-xxxl:24px;
+$font-size-title:36px;
+
+
+//間距
+$interval-xs:8px;
+$interval-s:10px;
+$interval-m:16px;
+$interval-l:20px;
+$interval-xl:24px;
+$interval-xxl:40px;
+$interval-xxl:60px;
+$interval-x-s:0 10px;
+$interval-x-m:0 16px;
+$interval-y-xs:8px 0 ;
+$interval-xy-s:10px 20px;
+$interval-xy-l:20px 50px;
+
+// 速率
+$speed-fast:.35s;
+$speed-medium:.5s;
+
+// 特效
+$text-shadow-gray: 0px 0px 3px  gray;
+
+// 字級
+$font-size-xs:.7rem;
+$font-size-s:.8rem;
+$font-size-m:1rem;
+$font-size-l:1.2rem;
+$font-size-xl:1.4rem;
+$font-size-xml:1.5rem;
+$font-size-xxl:1.8rem;
+$font-size-xxxl:2rem;
+
+// 字重
+$font-weight-m: bold;
+$font-weight-light:100;
+$font-weight-regular:400;
+$font-weight-bold:700;
+// 字重-Y
+$font-weight-regular:400;
+$font-weight-medium:500;
+$font-weight-bold:700;
+
+// 動畫
+
+// qa左邊icon
+@mixin aniShake {
+    animation: shake2 .8s;
+    animation-iteration-count: infinite;
+
+    @keyframes shake2 {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        25% {
+            transform: rotate(-25deg);
+        }
+
+        50% {
+            transform: rotate(0deg);
+        }
+
+        75% {
+            transform: rotate(25deg);
+        }
+
+    }
+}
+
+// 會員編輯按鈕
+@mixin aniPen {
+    animation: pen1 .8s;
+
+
+    @keyframes pen1 {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        50% {
+            transform: rotate(15deg);
+        }
+
+    }
+}
+
+// 泡泡-上下漂浮
+@mixin aniFloat {
+    animation: float 4s ease-in-out infinite;
+
+
+    @keyframes float {
+        0% {
+            transform: translatey(0px);
+        }
+
+        50% {
+            transform: translatey(-20px);
+        }
+
+        100% {
+            transform: translatey(0px);
+        }
+    }
+
+}
+
+// 泡泡-上下漂浮+旋轉
+@mixin aniFloatRotate($rotate-angle) {
+    animation: floatRotate-#{$rotate-angle} 10s ease-in-out infinite;
+
+    @keyframes floatRotate-#{$rotate-angle} {
+        0% {
+            transform: translateX(0px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateX(-60px) rotate(#{$rotate-angle});
+        }
+
+        100% {
+            transform: translateX(0px) rotate(0deg);
+        }
+    }
+}
+
+// 會員-預約紀錄
+@mixin aniBounce {
+    animation: bounce .8s;
+
+
+    @keyframes bounce {
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-15px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
+    }
+
+}
+
+// 圓角
+$border-r-xs:4px;
+$border-r-s:8px;
+$border-r-m:10px;
+$border-r-l:16px;
+
+// RWD斷點
+$mediaSm: 'max-width:640px';
+$mediaSmUp: 'min-width:641px';
+$mediaMd: 'max-width:1023px';
+$mediaMdUp: 'min-width:1025px';
+$mediaMdDown: 'max-width:1024px';
+$mediaLg: 'min-width:1024px';
+$mediaLt: 'max-width:1440px';

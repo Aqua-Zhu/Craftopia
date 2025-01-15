@@ -1,0 +1,396 @@
+@use 'variables' as *;
+@use 'function' as *;
+
+
+.reviewWrap {
+    width: 1280px;
+    max-width: 1280px;
+    height: auto;
+
+}
+
+.reviewContent {
+    display: flex;
+
+    background-color: white;
+    border-radius: 15px;
+    border: none;
+    overflow: hidden;
+
+    max-width: 1280px;
+    height: 515px;
+
+    margin-bottom: 20px;
+
+    .rvwLeft {
+
+        figure {
+            height: 100%;
+            overflow: hidden;
+            aspect-ratio: 4 / 3;
+
+            img {
+                object-fit: cover;
+                height: 100%;
+            }
+        }
+    }
+
+    .rvwRight {
+        width: 100%;
+        min-width: 500px;
+        padding: 40px 50px;
+        position: relative;
+
+        #iconX {
+            width: 24px;
+            height: 24px;
+            margin: 10px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .row1 {
+            display: flex;
+            align-items: center;
+
+            .idPic {
+                width: 40px;
+            }
+
+            .idName {
+                margin: 0 15px;
+                font-size: $font-size-l;
+                font-weight: $font-weight-bold;
+                color: $color-neutral-80;
+            }
+
+            .stoneLv {
+                width: 76px;
+            }
+        }
+
+        .row2 {
+            display: flex;
+            margin: 10px 0 25px 0;
+            font-size: $font-size-s;
+            color: $color-neutral-60;
+
+            span {
+                margin: 0 10px;
+            }
+        }
+
+        .row3 {
+            color: $color-neutral-80;
+            line-height: 1.7;
+        }
+    }
+}
+
+.reviewSubContent {
+    display: flex;
+    overflow: hidden;
+    max-width: 1280px;
+
+
+    .switchBtn {
+        display: block;
+        position: relative;
+
+
+        .rvwBigBtn {
+            @extend %btn-brown;
+            width: 100px;
+            height: 100px;
+            font-size: $font-size-m;
+            font-weight: $font-weight-bold;
+
+            position: absolute;
+            transition: all .2s linear;
+            top: 2px;
+            left: 60px;
+            z-index: 10;
+            box-shadow: 0 0 8px $color-coffee-primary;
+
+
+            &:hover {
+                cursor: default;
+            }
+        }
+
+        .rvwSmBtn {
+            @extend %btn-coffee;
+            width: 77px;
+            height: 77px;
+
+            position: absolute;
+            transition: all .2s linear;
+            top: 55px;
+            left: 5px;
+            
+            animation: breathing 2s ease-in-out infinite;
+            
+            @keyframes breathing {
+                
+                0%,
+                100% {
+                    transform: scale(1);
+                    opacity: 0.7;
+                }
+                
+                50% {
+                    transform: scale(1.1);
+                    opacity: 0.9;
+                }
+            }
+
+            &:hover {
+                scale: 1.04;
+                rotate: 3deg;
+                animation: none;
+            }
+        }
+    }
+
+    .slideshow {
+        background-color: rgb(0, 0, 0, 0.4);
+        border-radius: $border-r-l;
+        display: flex;
+        width: calc(100% - 155px);
+        margin-left: 155px;
+        position: relative;
+
+        .thumbnail-container {
+            overflow: hidden;
+            margin-right: 12px;
+            border-radius: $border-r-s;
+            display: flex;
+
+            .thumbnail-wrap {
+                display: flex;
+                margin: 5px;
+            }
+
+            .thumbnail {
+                margin-right: 10px;
+                width: 180px;
+                height: 135px;
+                cursor: pointer;
+
+                img {
+                    object-fit: cover;
+                    height: 100%;
+                    border-radius: $border-r-s;
+
+                }
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+            }
+
+            .active {
+                outline: $color-gold-medium solid 3px;
+                border-radius: $border-r-m;
+            }
+        }
+
+        .arrow-btn {
+            color: $color-brown-primary;
+            background-color: rgb(244, 235, 217, 0.7);
+            border: none;
+            border-radius: 50px;
+            height: 140px;
+
+            position: absolute;
+            top: 2px;
+
+            &:hover {
+                background-color: rgb(244, 235, 217, 0.9);
+            }
+        }
+
+        .right {
+            right: 0;
+            z-index: 999;
+        }
+
+        .left {
+            left: 0;
+            z-index: 999;
+        }
+
+        :disabled {
+            display: none;
+        }
+    }
+}
+
+.modalReview-overlay {
+    position: fixed;
+    /* 固定在螢幕上 */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* 半透明背景 */
+    display: flex;
+    /* 使用 flex 使內容居中 */
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* 確保它在頁面最上層 */
+}
+
+
+@media ($mediaMdDown) {
+    .modalReview-overlay {
+        .modalReview-content {
+            width: 90%;
+
+        }
+    }
+
+    .reviewWrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .reviewContent {
+            flex-direction: column;
+            height: auto;
+            width: 100%;
+            position: relative;
+
+            .rvwLeft {
+                object-fit: contain;
+            }
+
+            .rvwRight {
+                position: absolute;
+                bottom: 0;
+                background-color: rgb(0, 0, 0, 0.5);
+                height: 200px;
+                overflow: scroll;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+
+                padding-top: 20px;
+
+                .row1,
+                .row2,
+                .row3,
+                .idName {
+                    color: white;
+
+                }
+            }
+            #iconX {
+                filter: invert(80);
+            }
+        }
+
+        .reviewSubContent {
+
+            width: 100%;
+            height: auto;
+
+            .slideshow {
+                display: flex;
+
+
+                .thumbnail-wrap {
+
+                    width: auto;
+                }
+            }
+        }
+    }
+}
+
+@media ($mediaSm) {
+    .modalReview-overlay {
+
+        .modalReview-content {
+            position: absolute;
+            width: 90%;
+
+        }
+    }
+
+    .reviewWrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .reviewContent {
+            flex-direction: column;
+            height: 500px;
+            width: 100%;
+
+            .rvwLeft {
+                object-fit: contain;
+            }
+
+            .rvwRight {
+                position: unset;
+                min-width: 0;
+                width: 100%;
+                height: 100%;
+                background-color: $color-bg-light;
+                padding: 10px 20px;
+
+                .row1,
+                .row2,
+                .row3,
+                .idName {
+                    color: $color-coffee-primary;
+
+                }
+
+                .row2 {
+                    flex-direction: column;
+
+                    span {
+                        display: none;
+                    }
+                }
+
+            }
+        }
+
+        .reviewSubContent {
+
+            width: 100%;
+            height: 180px;
+
+            .switchBtn {
+                .rvwSmBtn {
+                    top: 95px;
+                }
+
+                .rvwBigBtn {
+                    left: 0px;
+                }
+            }
+
+            .slideshow {
+                display: flex;
+                margin-left: 110px;
+
+                .thumbnail-wrap {
+                    width: auto;
+                }
+            }
+        }
+    }
+}

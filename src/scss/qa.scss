@@ -1,0 +1,431 @@
+@use './variables' as *;
+@use './reset';
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+
+
+
+
+/* 橫幅 */
+#banner-qa {
+    position: relative;
+    width: 100%;
+    height: 25vh;
+    background-image: url(./images/03-1.png);
+    background-size: cover;
+    background-position: bottom;
+
+    .banner-qa-mask {
+        position: absolute;
+        bottom: -1px;
+        width: 100%;
+        height: 15vh;
+        background-image: url(./images/BG-texture-400.jpg);
+
+        mask: url(./images/BG-img-過度邊緣.png) no-repeat center bottom;
+        mask-size: contain;
+
+    }
+}
+
+
+
+/* 裝飾區 */
+.qaDecoBox {
+    position: relative;
+    overflow: visible;
+
+    .qaDeco-1 {
+        position: absolute;
+        width: 168px;
+        left: -1%;
+        top: 10%;
+        @include aniFloat;
+        // @include aniFloatRotate(10deg);
+
+    }
+
+    .qaDeco-2 {
+        position: absolute;
+        width: 280px;
+        right: -6%;
+        top: 40%;
+        @include aniFloat;
+    }
+
+    .qaBlob {
+        position: absolute;
+        z-index: 2;
+    }
+
+    .qaLeftYellow {
+        left: -160px;
+        top: 15%;
+        width: 480px;
+        height: fit-content;
+        @include aniFloat;
+    }
+
+    .qaRightBrown {
+        fill: $color-coffee-primary;
+        opacity: 0.6;
+        right: -8%;
+        bottom: -24px;
+        width: 480px;
+        height: fit-content;
+        @include aniFloat;
+    }
+
+    .qaRightYellow {
+        fill: $color-gold-primary;
+        opacity: 0.8;
+        right: 10%;
+        bottom: -10px;
+        width: 300px;
+        height: fit-content;
+        transform: rotate(-60deg);
+    }
+
+}
+/* 裝飾-平板區 */
+@media ($mediaMd) {
+    .qaDecoBox{
+
+        .qaDeco-1{
+            width: 120px;
+        }
+        .qaDeco-2{
+            width: 160px;
+        }
+        .qaLeftYellow{
+            width: 300px;
+        }
+        .qaRightBrown{
+            width: 280px;
+        }
+        .qaRightYellow{
+            width: 200px;
+        }
+    }
+}
+
+
+/* 麵包穴 */
+.qa-bread {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 70%;
+    max-width: 1000px;
+
+    font-size: 0.8rem;
+
+    padding-left: 8px;
+    margin-bottom: 60px;
+
+    a {
+        padding-bottom: 2px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.4s ease-in-out;
+
+        &:hover {
+            border-bottom: 2px solid $color-brown-dark;
+        }
+    }
+
+    >img {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        margin: 0px 6px;
+    }
+}
+
+/* 內容區 */
+#qa-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 200px;
+
+
+
+    .qa-contentBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 70%;
+        max-width: 1000px;
+        gap: 20%;
+
+
+        /* 左邊導引欄 */
+        #QA-left {
+            // border: 1px solid tomato;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 200px;
+
+
+            .QaLeftSticky {
+                position: sticky;
+                top: 200px;
+
+                li {
+                    margin-bottom: 40px;
+
+                    .left-list {
+                        display: flex;
+                        margin: 8px;
+                        width: 100%;
+                        position: relative;
+
+                        img,
+                        svg {
+                            width: 24px;
+                            height: 24px;
+                            margin-right: 12px;
+                        }
+
+                        &::after {
+                            content: "";
+                            background-image: url(./images/Vector-line.svg);
+                            background-repeat: no-repeat;
+                            width: 100%;
+                            height: 3px;
+                            position: absolute;
+                            bottom: -10px;
+                        }
+
+                        &:hover {
+
+                            .leftIcon {
+                                fill-opacity: 1;
+                                @include aniShake;
+                            }
+
+                        }
+                    }
+
+                    .decoLine {
+                        margin: 8px 0;
+                    }
+                }
+
+            }
+        }
+
+
+        .leftIcon.active {
+            fill-opacity: 1;
+            fill: $color-brown-dark;
+        }
+
+
+
+
+        /* 問答區 */
+        #QA-right {
+            // border: 1px solid tomato;
+            width: 100%;
+            position: relative;
+            z-index: 50;
+
+            >section {
+                // border: 1px solid tomato;
+                width: 100%;
+                height: fit-content;
+                padding-top: 60px;
+                margin-bottom: 100px;
+            }
+
+            .title {
+                margin-bottom: 40px;
+
+                img {
+                    height: 40px;
+                }
+            }
+
+
+
+
+            .list-row,
+            .list-row.light {
+                display: flex;
+                margin: 24px 0;
+                gap: 48px;
+
+
+                .quest-mark {
+                    font-weight: bolder;
+                    font-size: 20px;
+                    background-color: $color-brown-light;
+                    border-radius: 99px;
+                    width: 50px;
+                    height: 50px;
+                    text-align: center;
+                    line-height: 50px;
+                    cursor: default;
+                }
+
+                .QAset {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .question {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        background-color: $color-brown-light;
+                        border-radius: 10px;
+                        padding: 10px 16px 10px 32px;
+                        cursor: pointer;
+                        transition: .4s linear;
+
+                        &:hover {
+                            .icon-arrow {
+                                transform: rotate(90deg);
+
+                            }
+                        }
+
+
+                        .icon-arrow {
+                            width: 30px;
+                            height: 30px;
+                            // margin-left: 60px;
+
+                            transition: .4s linear;
+                        }
+                    }
+
+
+                    .question.show {
+                        border-radius: 10px 10px 0 0;
+
+                        .icon-arrow.show {
+                            transform: rotate(-180deg);
+
+                        }
+                    }
+
+                    .ansWrap {
+                        max-height: 0;
+                        overflow: hidden;
+                        transition: all 0.8s cubic-bezier(0, 1, 0, 1);
+                    }
+
+
+                    .answer {
+                        display: flex;
+                        background-color: $color-white-60;
+                        border-radius: 0 0 10px 10px;
+                        padding: 20px 42px 36px 42px;
+                        position: relative;
+
+                        font-weight: 400;
+                        white-space: pre-wrap;
+
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            /* 與白色背景的間距 */
+                            top: 0px;
+                            left: 10px;
+                            right: 10px;
+                            bottom: 10px;
+                            border: 2px dashed $color-brown-light;
+                            border-top: none;
+                            /* 虛線樣式 */
+                            border-radius: 0 0 10px 10px;
+
+                        }
+                    }
+
+                    .ansWrap.show {
+                        height: auto;
+                        max-height: 1000px;
+                        transition: all 0.8s cubic-bezier(1, 0, 1, 0);
+                    }
+                }
+            }
+
+
+
+
+            .list-row.light {
+
+                .quest-mark {
+                    background-color: $color-bg-dark;
+                }
+
+                .QAset {
+                    .question {
+                        background-color: $color-bg-dark;
+                    }
+
+                    .answer {
+                        &::before {
+                            border-color: $color-bg-dark;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 平板 */
+@media ($mediaMd) {
+    .qaDecoBox{
+        overflow: hidden;
+    }
+    #qa-content .qa-contentBox {
+        flex-direction: column;
+
+        #QA-left {
+            width: 100%;
+
+            .QaLeftSticky {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+        }
+    }
+}
+
+/* 手機 */
+@media ($mediaSm) {
+    
+    #qa-content .qa-contentBox {
+        flex-direction: column;
+        width: 86%;
+
+        #QA-left {
+            width: 100%;
+
+            .QaLeftSticky {
+                flex-direction: column;
+                align-items: center;
+
+                li {
+                    margin-bottom: 16px;
+                }
+            }
+        }
+    }
+
+    #qa-content .qa-contentBox #QA-right .list-row,
+    #qa-content .qa-contentBox #QA-right .list-row.light {
+        gap: 16px;
+    }
+}

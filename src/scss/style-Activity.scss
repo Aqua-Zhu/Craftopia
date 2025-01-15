@@ -1,0 +1,432 @@
+@use 'variables' as *;
+@use 'function' as *;
+@import url('https://fonts.googleapis.com/css2?family=Braah+One&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+
+#mainActivity {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    color: $color-neutral-80;
+    position: relative;
+    overflow: hidden;
+
+
+    .activity-content {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 130px 0px 0 0px;
+        max-width: 1200px;
+
+        .titlePic {
+            height: 40px;
+            margin-bottom: 20px;
+
+        }
+
+        .activity-date {
+            width: 100%;
+            padding: 0 80px;
+            text-align: left;
+            font-size: $font-size-xl;
+            font-family: "Braah One", serif;
+            color: $color-brown-primary;
+        }
+
+        .activity-title {
+            font-size: $font-size-xxl;
+            font-weight: $font-weight-bold;
+            letter-spacing: 1px;
+            width: 100%;
+            padding: 0 80px;
+            z-index: 100;
+        }
+
+        #activity-line {
+            padding: 0 80px;
+            margin-top: 10px;
+            height: 30%;
+        }
+
+        #activity-mainPic {
+            width: 100%;
+            height: 100%;
+            max-width: 1000px;
+            aspect-ratio: 4/3;
+            margin: 30px 0;
+            border-radius: $border-r-s;
+            z-index: 100;
+
+
+        }
+
+        .article-wrap {
+            height: 100%;
+            padding: 0 80px;
+            z-index: 100;
+
+            h3 {
+                font-size: $font-size-xl;
+                font-weight: $font-weight-bold;
+                margin-bottom: 25px;
+            }
+
+            p {
+                line-height: $font-size-xxl;
+            }
+
+            ul {
+                li {
+                    margin: 15px 0;
+                    line-height: $font-size-xxl;
+
+                    span {
+                        font-weight: $font-weight-bold;
+                        font-size: $font-size-l;
+
+                    }
+                }
+            }
+
+            figure {
+                display: flex;
+                margin: 20px 0;
+                justify-content: space-around;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    max-width: 500px;
+                    aspect-ratio: 4/3;
+                    border-radius: $border-r-s;
+                }
+            }
+
+        }
+
+        #deco-line-1 {
+            position: absolute;
+            top: 30px;
+            left: 40%;
+            opacity: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+        }
+
+        .blobs {
+            position: absolute;
+        }
+
+        #blobs-1 {
+            width: 280px;
+            height: 100%;
+            top: 850px;
+            right: 89%;
+
+            img {
+                transform: rotate(-100deg);
+            }
+        }
+
+        #blobs-2 {
+            width: 250px;
+            height: 100%;
+            top: 2800px;
+            left: 92%;
+        }
+
+        #blobs-3 {
+            width: 400px;
+            height: 100%;
+            top: 2520px;
+            left: 85%;
+        }
+
+        #blobs-4 {
+            width: 180px;
+            height: 100%;
+            top: 2850px;
+            right: 90%;
+        }
+
+        #blobs-5 {
+            width: 180px;
+            height: 100%;
+            top: 1300px;
+            left: 94%;
+        }
+
+        #blobs-6 {
+            width: 280px;
+            height: 100%;
+            top: 1450px;
+            left: 90%;
+        }
+
+        #blobs-7 {
+            width: 600px;
+            height: 100%;
+            top: 350px;
+            left: 80%;
+
+            img {
+                transform: rotate(40deg);
+            }
+        }
+
+        #blobs-8 {
+            width: 400px;
+            height: 100%;
+            top: 310px;
+            right: 80%;
+
+            img {
+                transform: rotate(40deg);
+            }
+        }
+
+        #blobs-9 {
+            width: 650px;
+            height: 100%;
+            top: 1610px;
+            right: 85%;
+
+            img {
+                transform: rotate(100deg) scaleX(-1);
+            }
+        }
+    }
+
+
+    .activity-location {
+        align-self: center;
+        width: 100%;
+        max-width: 1200px;
+        display: flex;
+        flex-direction: column;
+        z-index: 100;
+
+        .titlePic {
+            height: 40px;
+            margin: 30px 0;
+        }
+
+        .activity-detail {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding: 0 80px;
+            z-index: 100;
+
+            figure {
+                margin: 30 0px;
+
+                .mapPic {
+                    width: 100%;
+                    height: 350px;
+                }
+            }
+
+            #location-wrap {
+                z-index: 100;
+
+                p {
+                    margin: 20px 0;
+                    line-height: $font-size-xl;
+
+                    span {
+                        font-weight: $font-weight-bold;
+                        text-decoration: underline 2px $color-brown-primary ;
+                        text-underline-offset: 3px;
+                        text-decoration-style: dashed;
+                        font-size: $font-size-l;
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    #activity-recommend {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 150px;
+        position: relative;
+        z-index: 100;
+
+
+        .titlePic {
+            height: 40px;
+            margin: 30px 0;
+        }
+
+        .cardList {
+            max-width: 1200px;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .classCard {
+                max-width: 400px;
+                z-index: 100;
+
+                .classTag {
+                    .classLevel {
+                        padding: 7px 20px 10px;
+                    }
+
+                    .classTime {
+                        padding: 7px 20px 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .blobs {
+        position: absolute;
+        z-index: 1;
+    }
+
+
+
+    #blobs-10 {
+        width: 600px;
+        height: 100%;
+        top: -300px;
+        right: 85%;
+
+        img {
+            transform: rotate(120deg);
+        }
+    }
+
+    #blobs-11 {
+        width: 300px;
+        height: 100%;
+        top: 480px;
+        right: 88%;
+    }
+
+    #blobs-12 {
+        width: 280px;
+        height: 100%;
+        top: 800px;
+        right: 90%;
+
+        img {
+            transform: rotate(25deg);
+        }
+    }
+
+    #blobs-13 {
+        width: 500px;
+        height: 100%;
+        top: 500px;
+        left: 80%;
+
+        img {
+            transform: rotate(30deg);
+        }
+    }
+
+    #blobs-14 {
+        width: 350px;
+        height: 100%;
+        top: 60px;
+        left: 90%;
+
+        img {
+            transform: rotate(120deg);
+        }
+    }
+}
+
+@media ($mediaMdDown) {
+    #mainActivity {
+        .activity-content {
+            #deco-line-1 {
+                position: absolute;
+                top: 60px;
+                left: 40%;
+                transform: translate(-50%, -50%);
+                width: 130%;
+            }
+        }
+    }
+}
+
+@media ($mediaSm) {
+    #mainActivity {
+        .activity-content {
+            #deco-line-1 {
+                top: 90px;
+                left: 40%;
+                transform: translate(-50%, -50%);
+                width: 170%;
+            }
+
+            .activity-title,
+            .activity-date {
+                padding: 0 40px;
+            }
+
+            #activity-mainPic {
+                width: 80%;
+            }
+
+            .article-wrap {
+                padding: 0 40px;
+
+                figure {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+
+            .blobs_activity {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        }
+
+        .activity-location {
+            .activity-detail {
+                padding: 0 40px;
+            }
+        }
+
+        #activity-recommend {
+            overflow: hidden;
+
+            .blobs_activity {
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .cardList {
+                width: 90%;
+
+                .classTag {
+                    .classLevel {
+                        padding: 7px 20px 10px;
+                    }
+
+                    .classTime {
+                        padding: 7px 20px 10px;
+                    }
+                }
+
+                .classTitle {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+}
