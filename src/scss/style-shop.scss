@@ -8,98 +8,6 @@
     font-family: 'Noto Sans TC';
 }
 
-// .seemore-btn {
-//     margin-left: auto;
-//     display: inline-flex;
-//     align-items: center;
-//     width: 100px;
-//     color: $deep;
-//     padding: 0;
-//     position: relative;
-//     font-weight: bold;
-
-//     .ball {
-//         transition: .8s;
-//     }
-
-//     .arr {
-//         margin-left: 60px;
-//         position: relative;
-//         z-index: 10;
-//     }
-
-//     &:hover {
-//         .ball {
-//             transition: .8s;
-//             filter: hue-rotate(30deg) brightness(140%);
-//             transform: translateX(85px);
-//         }
-//     }
-
-//     &.shot {
-//         .ball {
-//             filter: hue-rotate(30deg) brightness(140%);
-//             transition: .7s cubic-bezier(.3, 1.77, .36, .69)
-//                 /*cubic-bezier(.5,2.77,.25,.35)*/
-//             ;
-//             transform: translateX(150px);
-//         }
-
-//         .transform-delay {
-//             transition: .4s;
-//             transform: translateX(65px);
-//         }
-
-//         .transform-delay2 {
-//             transition: .3s;
-//             opacity: 0;
-//         }
-
-//     }
-
-//     span {
-//         position: absolute;
-//         z-index: 10;
-//         width: 100%;
-//         margin-left: 15px;
-//         font-weight: bold;
-//     }
-
-//     @media ($mediaSm) {
-//         width: 50px;
-//         font-size: $font-size-s;
-
-//         .ball {
-//             width: 30px;
-//         }
-
-//         .arr {
-//             margin-left: 35px;
-//         }
-
-//         &.shot {
-//             .ball {
-//                 filter: hue-rotate(30deg) brightness(140%);
-//                 transition: .7s cubic-bezier(.3, 1.77, .36, .69)
-//                     /*cubic-bezier(.5,2.77,.25,.35)*/
-//                 ;
-//                 transform: translateX(80px);
-//             }
-
-//             .transform-delay {
-//                 transition: .4s;
-//                 transform: translateX(25px);
-//             }
-
-//             .transform-delay2 {
-//                 transition: .3s;
-//                 opacity: 0;
-//             }
-
-//         }
-//     }
-// }
-
 /*頁首區*/
 #topbar {
     display: flex;
@@ -552,11 +460,14 @@
         margin: 0;
 
         #shop-intro {
-            justify-self: center;
             width: 60%;
-            margin: 30px 0 30px;
+            margin: auto;
 
             .top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
                 img {
                     width: 20%;
                 }
@@ -633,6 +544,16 @@
 
     @media ($mediaMdDown) {
         width: 100%;
+
+        #content-shop {
+            #box-list {
+                margin: auto;
+            }
+        }
+
+        #lesson-shop {
+            margin: auto;
+        }
     }
 }
 

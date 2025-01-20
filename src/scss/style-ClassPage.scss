@@ -16,6 +16,7 @@
 .sectionClass {
     margin-bottom: 40px;
 }
+
 /* 鎖定滾動 */
 .lock-scroll {
     overflow: hidden;
@@ -35,6 +36,69 @@
         align-self: center;
     }
 }
+
+/*導覽列*/
+
+// #topbar {
+
+//     width: 100%;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 28px 64px;
+
+
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     z-index: 999;
+
+//     .logo {
+//         width: 232px;
+//     }
+
+//     .navigation {
+
+//         display: flex;
+//         align-items: center;
+
+//         .search {
+//             margin-right: 36px;
+
+//             li {
+//                 background-image: url(../images/nav-search.svg);
+//                 background-size: cover;
+//                 padding: 12px 23px 10px 19px;
+
+//                 a {
+//                     display: flex;
+//                     align-items: center;
+//                     color: black;
+
+//                     img {
+//                         width: 20px;
+//                         height: 20px;
+//                         margin-right: 8px;
+//                     }
+//                 }
+//             }
+//         }
+
+
+//         .menu {
+//             li {
+//                 background-image: url(../images/nav-menu.svg);
+//                 background-size: cover;
+//                 padding: 15px 16px;
+
+//                 img {
+//                     width: 34px;
+//                     height: 34px;
+//                 }
+//             }
+//         }
+//     }
+// }
 
 
 /*麵包屑*/
@@ -116,7 +180,7 @@
             justify-content: space-between;
 
             h2 {
-                color: #222;
+                color: black;
                 font-size: 24px;
                 font-weight: 600;
                 line-height: 1.7;
@@ -218,6 +282,27 @@
                 // scale: 1.04;
             }
         }
+
+
+
+
+        // #heart {
+        //     &:hover {
+        //         // scale: 1.15;
+        //         cursor: pointer;
+        //     }
+        // }
+
+        // #heart img {
+        //     // transition: 0.4s cubic-bezier(0, 1, 0, 1);
+        //     // /* 加入動畫 */
+        //     // transform: scale(1);
+        //     // /* 預設大小 */
+        // }
+
+        // #heart img.animate[src*="icon-heart-fill"] {
+        //     animation: jello-horizontal 0.9s both;
+        // }
     }
 
 
@@ -342,29 +427,19 @@
     justify-items: center;
     z-index: 99;
     height: auto;
+    // max-width: 1100px; // 20241230
     margin-bottom: 100px;
-    padding: 0 25%; 
+    padding: 0 25%;
+
     #titleQA {
         width: 205px;
     }
-    .courseQA{
+
+    .courseQA {
         max-width: 1000px;
     }
-    .list-row.light {
-        .quest-mark {
-            background-color: $color-bg-dark;
-        }
-        .QAset {
-            .question {
-                background-color: $color-bg-dark;
-            }
-            .answer {
-                &::before {
-                    border-color: $color-bg-dark;
-                }
-            }
-        }
-    }
+
+    // 20241230
 }
 
 
@@ -503,7 +578,7 @@
         z-index: 9998;
     }
 
-    .classExpWrapper{
+    .classExpWrapper {
         max-width: 1000px;
     }
 
@@ -525,14 +600,88 @@
     .expTop {
         display: flex;
         align-items: flex-end;
-        #titleExp{
+
+        #titleExp {
             width: 75%;
         }
+
         .seemore-btn {
             background-color: transparent;
         }
     }
 
+
+    // #titleExp {
+    //     width: 245px;
+    //     margin-bottom: 50px;
+    // }
+
+    // .newestExp {
+    //     padding-bottom: 150px;
+
+    //     .Exp {
+    //         width: 1000px;
+    //         height: 300px;
+    //         display: flex;
+    //         margin: 30px 0;
+
+
+    //         &:hover {
+    //             cursor: pointer;
+    //             background-color: rgb(255, 255, 255, 0.65);
+    //             border-radius: 10px;
+    //         }
+
+    //         .expPic {
+    //             width: 400px;
+    //             border-radius: 10px;
+    //         }
+
+    //         .expContent {
+    //             margin-left: 65px;
+    //             padding-top: 30px;
+
+    //             .expInfo {
+    //                 display: flex;
+
+    //                 p {
+    //                     margin: 0 20px;
+    //                     font-size: 20px;
+    //                 }
+
+    //                 img {
+    //                     height: 40px;
+    //                     width: auto;
+    //                 }
+    //             }
+
+    //             .expDate {
+    //                 display: flex;
+    //                 margin: 10px 0;
+
+    //                 p {
+    //                     //日期
+    //                     color: $color-neutral-60;
+    //                     font-size: 14px;
+    //                 }
+
+    //                 span {
+    //                     margin: 0 10px;
+    //                 }
+    //             }
+
+
+    //             .expText {
+    //                 font-size: 14px;
+    //                 display: -webkit-box;
+    //                 -webkit-box-orient: vertical;
+    //                 -webkit-line-clamp: 5;
+    //                 overflow: hidden;
+    //                 padding-right: 40px;
+    //             }
+    //         }
+    //     }
+    // }
 
     #bgExperience {
 
@@ -550,6 +699,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    // border: blue solid;
     z-index: 500;
     margin-bottom: 150px;
 
@@ -558,12 +708,14 @@
     }
 
     .boxList {
+        // border: rgb(252, 148, 238) solid 3px;
         display: flex;
         padding: 5px;
         overflow: hidden;
 
         /*卡片本體*/
         .classCard {
+            // border: rgb(36, 151, 36) solid 1px;
             display: flex;
             position: relative;
             width: 200px;
@@ -635,6 +787,8 @@
 
                     .classTitle {
                         display: flex;
+
+
                         h3 {
                             background-image: none;
                             color: $color-neutral-90;
@@ -645,6 +799,8 @@
                             line-clamp: 3;
                             overflow: hidden;
                         }
+
+
                     }
 
                     .classPrice {
@@ -1009,8 +1165,9 @@ footer {
 // RWD平板尺寸
 @media ($mediaMdDown) {
     #intro {
-        margin-top: 100px;
-        margin-bottom: 200px;
+        margin-top: 130px;
+        margin-bottom: 100px;
+        padding: 0 8%;
 
         .coursePhoto {
             margin-right: 30px;
@@ -1030,6 +1187,10 @@ footer {
         .buy {
             margin-top: 20px;
         }
+    }
+
+    #QA {
+        padding: 0 10%;
     }
 
     #studio {
@@ -1056,10 +1217,14 @@ footer {
     #experience {
         background-size: cover;
         padding-bottom: 0;
+        padding: 0 5%;
 
         .newestExp {
             padding-bottom: 100px;
         }
+    }
+    #recommend{
+        padding: 0 5%;
     }
 
 
@@ -1094,6 +1259,32 @@ footer {
         .courseIntro {
             width: 90%;
 
+        }
+    }
+
+    #content {
+        .courseContent {
+            width: 90%;
+
+            .course-content-clip {
+                .course-detail {
+                    p {
+                        margin: 20px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #QA {
+        padding: 0 5%;
+
+        .courseQA {
+            .quest-mark {
+                height: 30px;
+                width: 30px;
+                line-height: 30px;
+            }
         }
     }
 
