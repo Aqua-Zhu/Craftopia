@@ -598,7 +598,7 @@ function ClassPage() {
           <img src="./images/footer-deco.png" alt="" />
         </div>
         <div className="foot-content">
-          <a href="craftopia-01.html"><img src="./images/footer-logo.svg" alt="" /></a>
+          <Link to='/'><img src="./images/footer-logo.svg" alt="" /></Link>
 
           {/* 選單 */}
           <ul className="menu">

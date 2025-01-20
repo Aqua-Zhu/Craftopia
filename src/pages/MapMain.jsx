@@ -113,9 +113,9 @@ function MapMain() {
                         <p className="storeLocation">{store.location}</p>
                       </div>
                       <div className="storeName">
-                        <h3><a href="#">{store.storeName}</a></h3>
+                        <h3><Link to='/shop'>{store.storeName}</Link></h3>
                         <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' />
-
+                        
                          {/* <Hearttoggle2  defaultChecked={false}></Hearttoggle2> */}
                       </div>
                       <div className="storeDetail">
@@ -149,7 +149,7 @@ function MapMain() {
           )}
 
 
-         {/*  <figure className="decor-clip custom-shake-h  shake-constant">
+        {/*  <figure className="decor-clip custom-shake-h  shake-constant">
             <img src="./images/decor-clip.svg" alt="" />
           </figure>
 
@@ -171,7 +171,7 @@ function MapMain() {
                             <img src="./images/footer-deco.png" alt="" />
                         </div>
                         <div className="foot-content">
-                            <a href="craftopia-01.html"><img src="./images/footer-logo.svg" alt="" /></a>
+                            <Link to='/'><img src="./images/footer-logo.svg" alt="" /></Link>
     
                             {/* 選單 */}
                             <ul className="menu">
