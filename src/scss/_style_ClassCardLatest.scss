@@ -235,14 +235,18 @@ margin: 30px;
     margin-bottom: 70px;
 
     .cardList {
+         //0120新增--->
+        flex-direction: column;
         .classCard {
-            width: 150px;
+            // width: 150px;
+            width: 340px;
             height: 350px;
-            margin: 0 12px;
+            // margin: 0 12px;
+            margin-bottom: 56px;
 
-            .classPrice {
-                flex-direction: column;
-            }
+            // .classPrice {
+            //     flex-direction: column;
+            // } // <---0120新增
 
             &:nth-child(n+3) {
                 display: none;

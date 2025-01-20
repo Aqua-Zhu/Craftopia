@@ -37,69 +37,6 @@
     }
 }
 
-/*導覽列*/
-
-// #topbar {
-
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     padding: 28px 64px;
-
-
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     z-index: 999;
-
-//     .logo {
-//         width: 232px;
-//     }
-
-//     .navigation {
-
-//         display: flex;
-//         align-items: center;
-
-//         .search {
-//             margin-right: 36px;
-
-//             li {
-//                 background-image: url(../images/nav-search.svg);
-//                 background-size: cover;
-//                 padding: 12px 23px 10px 19px;
-
-//                 a {
-//                     display: flex;
-//                     align-items: center;
-//                     color: black;
-
-//                     img {
-//                         width: 20px;
-//                         height: 20px;
-//                         margin-right: 8px;
-//                     }
-//                 }
-//             }
-//         }
-
-
-//         .menu {
-//             li {
-//                 background-image: url(../images/nav-menu.svg);
-//                 background-size: cover;
-//                 padding: 15px 16px;
-
-//                 img {
-//                     width: 34px;
-//                     height: 34px;
-//                 }
-//             }
-//         }
-//     }
-// }
-
 
 /*麵包屑*/
 .breadCrumb {
@@ -282,27 +219,6 @@
                 // scale: 1.04;
             }
         }
-
-
-
-
-        // #heart {
-        //     &:hover {
-        //         // scale: 1.15;
-        //         cursor: pointer;
-        //     }
-        // }
-
-        // #heart img {
-        //     // transition: 0.4s cubic-bezier(0, 1, 0, 1);
-        //     // /* 加入動畫 */
-        //     // transform: scale(1);
-        //     // /* 預設大小 */
-        // }
-
-        // #heart img.animate[src*="icon-heart-fill"] {
-        //     animation: jello-horizontal 0.9s both;
-        // }
     }
 
 
@@ -427,7 +343,6 @@
     justify-items: center;
     z-index: 99;
     height: auto;
-    // max-width: 1100px; // 20241230
     margin-bottom: 100px;
     padding: 0 25%;
 
@@ -438,8 +353,9 @@
     .courseQA {
         max-width: 1000px;
     }
-
-    // 20241230
+}
+#QA .courseQA .list .list-row.light .quest-mark{
+    background-color: #F0E4C6; //0120新增
 }
 
 
@@ -571,7 +487,7 @@
     margin-bottom: 10px;
 
     position: relative;
-    z-index: 666;
+    // z-index: 666; //0120刪掉這一行
 
     .modalReview-overlay {
         position: fixed;
@@ -611,78 +527,6 @@
     }
 
 
-    // #titleExp {
-    //     width: 245px;
-    //     margin-bottom: 50px;
-    // }
-
-    // .newestExp {
-    //     padding-bottom: 150px;
-
-    //     .Exp {
-    //         width: 1000px;
-    //         height: 300px;
-    //         display: flex;
-    //         margin: 30px 0;
-
-
-    //         &:hover {
-    //             cursor: pointer;
-    //             background-color: rgb(255, 255, 255, 0.65);
-    //             border-radius: 10px;
-    //         }
-
-    //         .expPic {
-    //             width: 400px;
-    //             border-radius: 10px;
-    //         }
-
-    //         .expContent {
-    //             margin-left: 65px;
-    //             padding-top: 30px;
-
-    //             .expInfo {
-    //                 display: flex;
-
-    //                 p {
-    //                     margin: 0 20px;
-    //                     font-size: 20px;
-    //                 }
-
-    //                 img {
-    //                     height: 40px;
-    //                     width: auto;
-    //                 }
-    //             }
-
-    //             .expDate {
-    //                 display: flex;
-    //                 margin: 10px 0;
-
-    //                 p {
-    //                     //日期
-    //                     color: $color-neutral-60;
-    //                     font-size: 14px;
-    //                 }
-
-    //                 span {
-    //                     margin: 0 10px;
-    //                 }
-    //             }
-
-
-    //             .expText {
-    //                 font-size: 14px;
-    //                 display: -webkit-box;
-    //                 -webkit-box-orient: vertical;
-    //                 -webkit-line-clamp: 5;
-    //                 overflow: hidden;
-    //                 padding-right: 40px;
-    //             }
-    //         }
-    //     }
-    // }
-
     #bgExperience {
 
         img {
@@ -699,7 +543,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    // border: blue solid;
     z-index: 500;
     margin-bottom: 150px;
 
@@ -708,14 +551,12 @@
     }
 
     .boxList {
-        // border: rgb(252, 148, 238) solid 3px;
         display: flex;
         padding: 5px;
         overflow: hidden;
 
         /*卡片本體*/
         .classCard {
-            // border: rgb(36, 151, 36) solid 1px;
             display: flex;
             position: relative;
             width: 200px;
@@ -1223,7 +1064,8 @@ footer {
             padding-bottom: 100px;
         }
     }
-    #recommend{
+
+    #recommend {
         padding: 0 5%;
     }
 
@@ -1263,9 +1105,9 @@ footer {
     }
 
     #content {
+        margin-top: 120px;
         .courseContent {
             width: 90%;
-
             .course-content-clip {
                 .course-detail {
                     p {
@@ -1284,6 +1126,9 @@ footer {
                 height: 30px;
                 width: 30px;
                 line-height: 30px;
+            }
+            .icon-arrow{
+                margin-left: 8px; //0120新增
             }
         }
     }
@@ -1317,31 +1162,4 @@ footer {
             }
         }
     }
-
 }
-
-/* totop按鈕 */
-// .toTop {
-//     z-index: 9988;
-
-//     .toTop-btn {
-//         border: none;
-//         background: none;
-//         cursor: pointer;
-
-
-//         #toTopHover {
-//             display: none;
-//         }
-
-//         &:hover {
-//             >#toTop {
-//                 display: none;
-//             }
-
-//             #toTopHover {
-//                 display: block;
-//             }
-//         }
-//     }
-// }

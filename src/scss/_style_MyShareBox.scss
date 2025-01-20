@@ -105,7 +105,7 @@
 /* 心得-平板 */
 @media ($mediaMdDown) {
     #experience {
-        z-index: 999;
+        // z-index: 999; //0120刪減
         .classExWrapper{
             padding: 5% 8%;
         }

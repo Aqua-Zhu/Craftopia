@@ -323,7 +323,7 @@
         .modalReview-content {
             position: absolute;
             width: 90%;
-
+            margin-top: 60px; //0120新增
         }
     }
 
@@ -371,15 +371,24 @@
         .reviewSubContent {
 
             width: 100%;
-            height: 180px;
+            // height: 180px; //0120刪減
 
             .switchBtn {
                 .rvwSmBtn {
-                    top: 95px;
+                    top: 70px;
+                    //0120新增--->
+                    left: 10px; 
+                    width: 72px;
+                    height: 72px;
+                    font-size: 12px; // <---0120新增
                 }
 
                 .rvwBigBtn {
-                    left: 0px;
+                     //0120新增--->
+                    left: 10px;
+                    width: 72px;
+                    height: 72px;
+                    font-size: 12px; // <---0120新增
                 }
             }
 
