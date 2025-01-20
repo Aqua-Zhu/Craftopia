@@ -551,11 +551,14 @@
         margin: 0;
 
         #shop-intro {
-            justify-self: center;
             width: 60%;
-            margin: 30px 0 30px;
+            margin: auto;
 
             .top {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
                 img {
                     width: 20%;
                 }
@@ -632,6 +635,16 @@
 
     @media ($mediaMdDown) {
         width: 100%;
+
+        #content-shop {
+            #box-list {
+                margin: auto;
+            }
+        }
+
+        #lesson-shop {
+            margin: auto;
+        }
     }
 }
 
@@ -1110,13 +1123,15 @@
 
     .share-btn {
         margin-left: 70%;
-        .seemore-btn{
+
+        .seemore-btn {
             background: none;
             border: none;
             font-family: "Braah One", serif;
             font-weight: 600;
             font-size: $font-size-m;
-            .font{
+
+            .font {
                 width: 80%;
             }
         }

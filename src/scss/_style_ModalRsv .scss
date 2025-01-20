@@ -303,16 +303,18 @@
 // RWD手機尺寸
 @media ($mediaSm) {
     .modal-content {
-        height: 850px;
+        display: flex;
+        height: 100%;
     }
 
     .lightBoxWrap {
         height: 100%;
+        margin: auto;
 
         .content {
             margin: 16px 30px 68px 30px;
             flex-direction: column;
-            height: 750px;
+            height: 85%;
             overflow: scroll;
 
             

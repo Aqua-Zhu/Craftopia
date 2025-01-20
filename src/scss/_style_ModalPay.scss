@@ -292,8 +292,8 @@
                 }
             }
 
-            
-            
+
+
         }
     }
 }
@@ -312,6 +312,13 @@
 
 // RWD手機尺寸
 @media ($mediaSm) {
+    .modalPay-overlay{
+        align-items:unset;
+    }
+    .modalPay-content {
+        display: flex;
+    }
+
     .lightBoxWrap {
         height: 100%;
 
@@ -322,6 +329,8 @@
                 margin-left: 30px;
             }
         }
+
+
 
         .content {
             margin: 16px 30px 68px 30px;
@@ -347,4 +356,5 @@
 
         }
     }
+
 }
