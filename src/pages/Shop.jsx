@@ -8,6 +8,7 @@ import ClassCardLatest from '../component/ClassCardLatest';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet-async';
 
 export default function Shop() {
     
@@ -34,6 +35,9 @@ export default function Shop() {
 
     return (
         <>
+        <Helmet>
+            <title>小自在工藝空間─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+        </Helmet>
             <div id='body'>
                 <main>
                     {/* 頁首區 */}

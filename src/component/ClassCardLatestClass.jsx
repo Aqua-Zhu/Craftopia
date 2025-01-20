@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Hearttoggle from "./Hearttoggle";
 import "../scss/_style_ClassCardLatest.scss";
+import { Link } from "react-router-dom";
 
 
 // 變數名稱大家可以改成寫死的文字或是自己的資料
@@ -54,25 +55,25 @@ function ClassCardLatestClass() {
                 classCards.map((card) => (
                     <div key={card.id} className="classCard">
                         <figure className="classPhoto">
-                            <a href="#">
+                            <Link to='/classpage'>
                                 <p>See More <img src="./images/icons-arrowRightBold.svg" alt="" /></p>
                                 <img className="photo" src={card.img} alt="" />
                                 <div className="tagHotorNew ">
                                     <img src="./images/icon-tag/labels-hot.png" alt="" />
                                     {/* <img src="./images/icon-tag/labels-new.png" alt="" /> */}
                                 </div>
-                            </a>
+                            </Link>
                         </figure>
                         <div className="classTag">
                             <p className="classLevel">{card.level}</p>
                             <p className="classTime">{card.duration}hr</p>
                         </div>
                         <div className="classTitle">
-                            <h3><a href="#">{card.courseName}</a></h3>
+                            <h3><Link to='/classpage'>{card.courseName}</Link></h3>
                             <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' />
                         </div>
                         <div className="classPrice">
-                            <p className="classStoreName"><a href="#">{card.storeName}</a></p>
+                            <p className="classStoreName"><Link to='/shop'>{card.storeName}</Link></p>
                             <p className="price">$ {card.price.toLocaleString()}</p>
                         </div>
                     </div>

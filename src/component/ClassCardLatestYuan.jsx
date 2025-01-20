@@ -59,12 +59,12 @@ function ClassCardLatestYuan() {
                         <p className="classTime">{course.duration}hr</p>
                     </div>
                     <div className="classTitle">
-                        <h3><a href="#">{course.courseName}</a></h3>
+                        <h3><Link to='/classpage'>{course.courseName}</Link></h3>
                         <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' defaultChecked={true} />
                         {/* <Hearttoggle2  defaultChecked={true}></Hearttoggle2> */}
                     </div>
                     <div className="classPrice">
-                        <p className="classStoreName"><a href="#">{course.storeName}</a></p>
+                        <p className="classStoreName"><Link to='/shop'>{course.storeName}</Link></p>
                         <p className="price">$ {course.price.toLocaleString()}</p>
                     </div>
                 </div>

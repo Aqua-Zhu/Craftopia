@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ToTop from "../component/ToTop";
 import { Link } from "react-router-dom";     
+import { Helmet } from "react-helmet-async";
 
 
 export default function Home() {
@@ -21,6 +22,9 @@ export default function Home() {
     };
     return (
         <>
+        <Helmet>
+            <title>Craftopia 藝嶼－由手工藝組成的烏托邦│皮革、金工、陶瓷 手作工作室地圖</title>
+        </Helmet>
             <div id="body">
                 {/* 頁首區 */}
                 <Topbar bannerId='#banner' />

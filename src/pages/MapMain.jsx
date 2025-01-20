@@ -12,6 +12,7 @@ import 'csshake/dist/csshake.min.css';
 import TopbarB from '../component/TopbarB';
 import { Link } from 'react-router-dom';
 import Hearttoggle2 from '../component/Hearttoggle2';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -65,7 +66,9 @@ function MapMain() {
 
   return (
     <>
-
+  <Helmet>
+    <title>發掘店家工作室─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+  </Helmet>
       <TopbarB/>
 
       <main id="MapPage">

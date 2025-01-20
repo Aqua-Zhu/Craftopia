@@ -8,6 +8,7 @@ import 'csshake/dist/csshake.min.css';
 import TopbarB from '../component/TopbarB';
 import AOS from 'aos';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -53,6 +54,9 @@ export default function SearchLesson() {
 
   return (
     <>
+    <Helmet>
+      <title>課程搜尋─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+    </Helmet>
     <TopbarB/>
       <main id='searchlesson'>
 

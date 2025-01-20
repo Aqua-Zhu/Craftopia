@@ -18,6 +18,7 @@ import '../scss/style-ClassPage.scss';
 import Seemore from '../component/Seemore';
 import { Link } from "react-router-dom";
 import ShareWrap from '../component/ShareWrap';
+import { Helmet } from 'react-helmet-async';
 
 
 function ClassPage() {
@@ -232,7 +233,9 @@ function ClassPage() {
 
   return (
     <>
-
+  <Helmet>
+    <title>Overloading 戒指 | 純銀 | 送禮自用─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+  </Helmet>
       {/* 最新心得rwd爆掉 */}
       <TopbarB />
       {/*獨立區 */}

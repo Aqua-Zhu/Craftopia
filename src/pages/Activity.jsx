@@ -8,6 +8,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; //載入node modules中的套件前面不加./
 import '../scss/style-activity.scss';
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import ClassCardLatestClass from "../component/ClassCardLatestClass";
 
 
 function Activity() {
@@ -38,6 +40,9 @@ function Activity() {
     
     return (
         <>
+        <Helmet>
+            <title>最新活動資訊─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+        </Helmet>
             <TopbarB />
             {/*獨立區 */}
             {/* ModalLogIn 元件 */}
@@ -132,7 +137,7 @@ function Activity() {
                 <section id='activity-recommend'>
                     <figure><img src="./images/title-rcm-activity.svg" alt="相關課程推薦" className="titlePic" id="titleRec" /></figure>
                     <div className='cardList'>
-                        <ClassCardLatest />
+                        <ClassCardLatestClass/>
                     </div>
                     <div className="blobs_activity">
                         <figure className="blobs" id="blobs-10" data-aos="fade-up" data-aos-duration="800"><img src="./images/blobs-class3.svg" alt="" /></figure>

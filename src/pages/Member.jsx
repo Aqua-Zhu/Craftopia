@@ -12,6 +12,7 @@ import SeeMoreYuan from '../component/SeeMoreYuan';
 import TopbarB from '../component/TopbarB';
 import AOS from 'aos';
 import ClassCardLatestYuan from '../component/ClassCardLatestYuan';
+import { Helmet } from 'react-helmet-async';
 
 export default function Member() {
     useEffect(() => {
@@ -48,6 +49,9 @@ export default function Member() {
 
     return (
         <>
+        <Helmet>
+            <title>會員中心─Craftopia 藝嶼│一個由手工藝組成的烏托邦</title>
+        </Helmet>
             <TopbarB />
             <main id='memberArea'>
 
