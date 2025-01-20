@@ -44,7 +44,7 @@ export default function Home() {
                                     <img src="./images/title-lesson.png" alt="" />
                                 </figure>
                                 <p className="lesson-text" data-aos="fade-up">想要動手做專屬於你的工藝最品嗎？<br />
-                                    Craftopia 一次搜羅台北地區的 <span>金工／陶藝／皮革</span>特色手作工作室。<br />
+                                    Craftopia 一次搜羅台北地區的 <span>皮革／金工／陶藝</span>特色手作工作室。<br />
                                     清晰的<span>地圖</span>與<span>品牌</span>介紹，輕鬆探索有趣課程，一鍵預約，說走就走！<br />
                                     不論是初次嘗試還是老手上陣，獨自挑戰或揪團同樂，都能在這裡找到讓你心動的手作體驗！</p>
                             </header>
@@ -55,21 +55,21 @@ export default function Home() {
                                     <p className="flex pt3">點擊查看更多</p>
                                     <p className="flex pt2">皮革工藝涵蓋多元的技法：手縫、打孔、染色、壓紋、編織等，每個步驟都需要耐心與專注。
                                         隨著使用時間的累積，皮革製品會因使用者的愛護而產生獨特的包漿與風韻，展現出歲月淬煉的美感。</p>
-                                    <img id="card1" src="./images/leather.jpg" alt="" />
+                                    <img id="card1" src="./images/home-leather.jpg" alt="" />
                                 </Link>
                                 <Link to='/search' className="card contain2">
                                     <h3 className="title-class">金<br />工</h3>
                                     <h3 className="flex pt1">金工</h3>
                                     <p className="flex pt3">點擊查看更多</p>
                                     <p className="flex pt2">「金工」可以說是金屬工藝，而不是只限於「金」，我們最常使用的創作材料包含純銀、黃銅、紅銅。甚至也不只限於用金屬材料來加工，也有「蠟雕」、「翻模」等方式，都可以協助金屬工藝的創作！</p>
-                                    <img id="card2" src="./images/jewelry.jpg" alt="" />
+                                    <img id="card2" src="./images/home-metalwork.jpg" alt="" />
                                 </Link>
                                 <Link to='/search' className="card contain3">
-                                    <h3 className="title-class">陶<br />瓷</h3>
-                                    <h3 className="flex pt1">陶瓷</h3>
+                                    <h3 className="title-class">陶<br />藝</h3>
+                                    <h3 className="flex pt1">陶藝</h3>
                                     <p className="flex pt3">點擊查看更多</p>
                                     <p className="flex pt2">陶瓷泛指以黏土塑形，再經過燒製成形的器物。陶器，一般用黏土或陶土，經捏製成形後燒製而成；瓷器則由瓷石、高嶺土等組成，外表施釉或經手工彩繪，高溫（約1200℃–1400℃）窯內燒製而成。</p>
-                                    <img id="card3" src="./images/clay.jpg" alt="" />
+                                    <img id="card3" src="./images/home-pottery.jpg" alt="" />
                                 </Link>
                             </div>
                             {/* 裝飾物件 */}
@@ -98,7 +98,7 @@ export default function Home() {
 
 
                                 <ul className="cho-content">
-                                    <h2>聖誕節前夕來場約會!!<br />『 TAO TAO 工作室』雙人陶藝體驗課</h2>
+                                    <h2>♥ 情人節活動開跑 ♥<br />『金生金室』麻花造型銀飾手作體驗課程</h2>
                                     <li>課程中可學習陶藝基本技法，以引導的方式讓兩人共同創作，若有任何製作上的需求，可以在課程中與老師討論。</li>
                                     <li>報名多堂課程及團體課程，皆有相關優惠，歡迎詢問報名。</li>
                                 </ul>
@@ -125,7 +125,7 @@ export default function Home() {
                             </div>
                             <div className=" indexHotCon3">
                                 <ul className="indexHotCon3-text">
-                                    <h2>聖誕節前夕來場約會!!<br />『 TAO TAO 工作室』雙人陶藝體驗課</h2>
+                                    <h2>乙巳蛇年，新年新氣象!<br />『 冉冉皮革工作室』設計師款手拿包開課囉~</h2>
                                     <li>課程中可學習陶藝基本技法，以引導的方式讓兩人共同創作，若有任何製作上的需求，可以在課程中與老師討論。</li>
                                     <li>報名多堂課程及團體課程，皆有相關優惠，歡迎詢問報名。</li>
                                 </ul>
@@ -156,8 +156,8 @@ export default function Home() {
                                 <div className="act" data-aos="flip-up">
                                     <img src="./images/act-1.png" alt="" />
                                     <div className="act-content">
-                                        <p>2024 年 10 月 13 日</p>
-                                        <h2>2024新北歡樂金工城★11/15盛大展開，八大亮點、四大展區打造連續48天最手工的璀璨城市！</h2>
+                                        <p>2025 年 1 月 25 日</p>
+                                        <h2>『蛇★麼★飾』集結台灣、韓國、日本、泰國創作者的舞台~2025最強手工藝特展就在台北松菸文創園區!</h2>
                                         <div className="a">
                                             <Link to='/act'>see more</Link>
                                         </div>
@@ -184,9 +184,11 @@ export default function Home() {
                         <p className="Info-btn" href="" data-aos="fade-up"><Seemore text={'All Info'} imgBall={"./images/Vector-circle-b.png"} href='#/classpage' /></p>
 
                     </section>
+
                     {/* 關於我們 */}
                     {/* <figure id="us-bg"><img src="./images/aboutus-bg.png" alt="" /></figure> */}
                     <div id="feature-all">
+
                         <section id="about" data-aos="flip-up">
                             <header>
                                 <figure className="title"><img src="./images/title-aboutus.svg" alt="" /></figure>
@@ -237,11 +239,11 @@ export default function Home() {
                                 </article>
                             </div>
                             <div className="last" >
-                                <p data-aos="fade-up"><strong>
+                                <p data-aos="fade-up">
                                     Find<br />
                                     Your Own<br />
                                     Craftopia !<br />
-                                </strong>
+                                
                                 </p>
                                 <div className="last-btn" data-aos="fade-up">
                                     <Link to='/mapmain'><button>挖掘店家<img src="./images/arrow.right.png" alt="" /></button></Link>
@@ -257,6 +259,7 @@ export default function Home() {
                         <figure className="blob-20"><img src="./images/blob-20.svg" alt="" /></figure>
                         <figure className="blob-21"><img src="./images/blob-21.svg" alt="" /></figure>
                     </div>
+                    
 
                 </main>
                 <ToTop initialStyle={initialStyle} />

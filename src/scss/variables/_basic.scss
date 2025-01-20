@@ -1,57 +1,71 @@
 // 字級
-$font-size-xs:10px;
-$font-size-s:12px;
-$font-size-m:14px;
-$font-size-xm:16px;
-$font-size-l:18px;
-$font-size-xl:20px;
-$font-size-xxl:22px;
-$font-size-xxxl:24px;
-$font-size-title:36px;
+$font-size-xs: 10px;
+$font-size-s: 12px;
+$font-size-m: 14px;
+$font-size-xm: 16px;
+$font-size-l: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 22px;
+$font-size-xxxl: 24px;
+$font-size-title: 36px;
 
 
 //間距
-$interval-xs:8px;
-$interval-s:10px;
-$interval-m:16px;
-$interval-l:20px;
-$interval-xl:24px;
-$interval-xxl:40px;
-$interval-xxl:60px;
-$interval-x-s:0 10px;
-$interval-x-m:0 16px;
-$interval-y-xs:8px 0 ;
-$interval-xy-s:10px 20px;
-$interval-xy-l:20px 50px;
+$interval-xs: 8px;
+$interval-s: 10px;
+$interval-m: 16px;
+$interval-l: 20px;
+$interval-xl: 24px;
+$interval-xxl: 40px;
+$interval-xxl: 60px;
+$interval-x-s: 0 10px;
+$interval-x-m: 0 16px;
+$interval-y-xs: 8px 0;
+$interval-xy-s: 10px 20px;
+$interval-xy-l: 20px 50px;
 
 // 速率
-$speed-fast:.35s;
-$speed-medium:.5s;
+$speed-fast: .35s;
+$speed-medium: .5s;
 
 // 特效
-$text-shadow-gray: 0px 0px 3px  gray;
+$text-shadow-gray: 0px 0px 3px gray;
 
 // 字級
-$font-size-xs:.7rem;
-$font-size-s:.8rem;
-$font-size-m:1rem;
-$font-size-l:1.2rem;
-$font-size-xl:1.4rem;
-$font-size-xml:1.5rem;
-$font-size-xxl:1.8rem;
-$font-size-xxxl:2rem;
+$font-size-xs: .7rem;
+$font-size-s: .8rem;
+$font-size-m: 1rem;
+$font-size-l: 1.2rem;
+$font-size-xl: 1.4rem;
+$font-size-xml: 1.5rem;
+$font-size-xxl: 1.8rem;
+$font-size-xxxl: 2rem;
 
 // 字重
 $font-weight-m: bold;
-$font-weight-light:100;
-$font-weight-regular:400;
-$font-weight-bold:700;
+$font-weight-light: 100;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
 // 字重-Y
-$font-weight-regular:400;
-$font-weight-medium:500;
-$font-weight-bold:700;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
 
 // 動畫
+
+
+
+@keyframes arrowRight {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+
 
 // qa左邊icon
 @mixin aniShake {
@@ -162,10 +176,10 @@ $font-weight-bold:700;
 }
 
 // 圓角
-$border-r-xs:4px;
-$border-r-s:8px;
-$border-r-m:10px;
-$border-r-l:16px;
+$border-r-xs: 4px;
+$border-r-s: 8px;
+$border-r-m: 10px;
+$border-r-l: 16px;
 
 // RWD斷點
 $mediaSm: 'max-width:640px';

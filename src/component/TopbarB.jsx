@@ -26,7 +26,7 @@ export default function TopbarB() {
                         {/* ModalLogIn 元件 */}
                         <ModalLogIn isOpen={isModalLogInOpen} onClose={handleCloseModalLogIn} />
                         <li className="secondary3"><Link to="/mapmain"><img src="./images/findshop-btn.svg" alt="發掘店家" /></Link></li>
-                        <li className="secondary2" onClick={handleOpenModalLogIn}><img src="./images/member-btn.svg" alt="會員中心" /></li>
+                        <li style={{cursor:"pointer"}} className="secondary2" onClick={handleOpenModalLogIn}><img src="./images/member-btn.svg" alt="會員中心" /></li>
                         <li className="secondary1"><Link to='/qa'><img src="./images/faq-btn.svg" alt="常見問題" /></Link></li>
                         <li className="secondary4 first"><Link to='/search'><img src="./images/search-btn.svg" alt="搜尋課程" /></Link></li>
                     </ul>

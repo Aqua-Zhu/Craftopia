@@ -97,13 +97,13 @@ function ClassList() {
                                         <div className="tagHotorNew ">
                                             {course.sales > 20 && (
 
-                                                <img src="./images/labels-hot.png" alt="" />
+                                                <img src="./images/icon-tag/labels-hot.png" alt="" />
 
                                             )}
                                             {newest && (
 
 
-                                                <img src="./images/labels-new.png" alt="" />
+                                                <img src="./images/icon-tag/labels-new.png" alt="" />
 
                                             )}
                                         </div>
@@ -138,7 +138,7 @@ function ClassList() {
                     <div data-aos="fade-right" className="seeMore" onClick={handleHotSeeMore}>
                         <p className="seemore-btn" href="#">
                             <img className="ball" src="./images/Vector-circle-b.png" alt="" />
-                            <span className="font">see more</span>
+                            <span className="font">See More</span>
                             <img className="arr" src="./images/icons-arrowDown.svg" alt="" />
                         </p>
                     </div>
@@ -185,12 +185,12 @@ function ClassList() {
                                         <img className="photo" src={`./images/course/${course.image}`} alt="" />
                                         <div className="tagHotorNew">
                                             {course.sales > 20 && (
-                                                <img src="./images/labels-hot.png" alt="" />
+                                                <img src="./images/icon-tag/labels-hot.png" alt="" />
                                             )}
 
 
 
-                                            <img src="./images/labels-new.png" alt="" />
+                                            <img src="./images/icon-tag/labels-new.png" alt="" />
 
 
                                         </div>
@@ -231,7 +231,7 @@ function ClassList() {
                     <div data-aos="fade-right" className="seeMore" onClick={handleNewSeeMore}>
                         <p className="seemore-btn" href="#">
                             <img className="ball" src="./images/Vector-circle-b.png" alt="" />
-                            <span className="font">see more</span>
+                            <span className="font">See More</span>
                             <img className="arr" src="./images/icons-arrowDown.svg" alt="" />
                         </p>
                     </div>

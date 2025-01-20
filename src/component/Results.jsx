@@ -344,10 +344,10 @@ function Results({ filteredCourses, resultVisible , selectedOption }) {
 
                                                     <div className="tagHotorNew ">
                                                         {course.sales > 20 && (
-                                                            <img src="./images/labels-hot.png" alt="" />
+                                                            <img src="./images/icon-tag/labels-hot.png" alt="" />
                                                         )}
                                                         {newest && (
-                                                            <img src="./images/labels-new.png" alt="" />
+                                                            <img src="./images/icon-tag/labels-new.png" alt="" />
                                                         )}
                                                     </div>
 

@@ -53,12 +53,12 @@ export default function Shop() {
                                 </div>
                                 <div className="content">
                                     <img className="line" src="./images/shop-Vector.png" alt="" />
-                                    <p><img src="./images/phone.png" alt="" /> 0800-000-000</p>
-                                    <p><img src="./images/locate.png" alt="" /> 台北市大安區復興南路一段150號2樓</p>
-                                    <p><img src="./images/Time.png" alt="" /> 星期二~星期日 <br />11:30~18:00</p>
+                                    <p><img src="./images/phone.svg" alt="" /> 02-2251-000</p>
+                                    <p><img src="./images/locate.svg" alt="" /> 台北市大安區圈圈東路一段179號2樓</p>
+                                    <p><img src="./images/Time.svg" alt="" /> 星期二~星期日 <br />11:30~18:00</p>
                                     <img className="line" src="./images/shop-Vector2.png" alt="" />
                                     <div className="feature-shop">
-                                        <p><span>皮革工作室</span></p>
+                                        <p><span>陶藝工作室</span></p>
                                         <p className='feat2-shop'><span>寵物友善</span></p>
                                         <p><span>鄰近捷運</span></p>
                                     </div>
@@ -79,9 +79,9 @@ export default function Shop() {
                             { /* 現有課程 */}
                             <section id="lesson-shop" >
                                 <figure className="title-shop" data-aos="fade-right"><img src="./images/lesson.svg" alt="" /></figure>
-                                <div className="class-row" data-aos="fade-up">
+                                
                                     <ClassCardLatest />
-                                </div>
+                                
                                 {/* <button className="see-btn"data-aos="fade-left"/><img className='ball-shop' src="./images/Vector-circle-b.png" alt="" /> <span>See More</span><img className='arr-shop' src="./images/shop-arr.svg" alt="" /></button> */}
                             </section>
                             { /* 心得分享 */}

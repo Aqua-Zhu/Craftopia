@@ -15,7 +15,7 @@ function ClassCardLatestClass() {
             duration: "3",
             courseName: "【陶藝小酒杯】『土斯工作坊』手作陶杯體驗課",
             storeName: "土斯工作坊",
-            price: "1290",
+            price: 1290,
             img: "./images/course-card-pic-1.jpg",
         },
         {
@@ -24,7 +24,7 @@ function ClassCardLatestClass() {
             duration: "4",
             courseName: "低調奢華名片夾─從無到有自己製作",
             storeName: "Royal Leather",
-            price: "1980",
+            price: 1980,
             img: "./images/course-card-pic-2.jpg",
         },
         {
@@ -33,7 +33,7 @@ function ClassCardLatestClass() {
             duration: "3",
             courseName: "創造專屬你們的對戒！『草樹工作坊』銀戒雙人體驗課",
             storeName: "草樹工作坊",
-            price: "3800",
+            price: 3800,
             img: "./images/course-card-pic-3.jpg",
         },
         {
@@ -42,7 +42,7 @@ function ClassCardLatestClass() {
             duration: "2",
             courseName: "《真皮老鋪》皮革文件夾手作課程 / DIY / 適合上班族、情侶、社團",
             storeName: "真皮老鋪",
-            price: "1800",
+            price: 1800,
             img: "./images/course-card-pic-4.jpg",
         }
     ];
@@ -58,8 +58,8 @@ function ClassCardLatestClass() {
                                 <p>See More <img src="./images/icons-arrowRightBold.svg" alt="" /></p>
                                 <img className="photo" src={card.img} alt="" />
                                 <div className="tagHotorNew ">
-                                    <img src="./images/labels-hot.png" alt="" />
-                                    <img src="./images/labels-new.png" alt="" />
+                                    <img src="./images/icon-tag/labels-hot.png" alt="" />
+                                    {/* <img src="./images/icon-tag/labels-new.png" alt="" /> */}
                                 </div>
                             </a>
                         </figure>
@@ -73,7 +73,7 @@ function ClassCardLatestClass() {
                         </div>
                         <div className="classPrice">
                             <p className="classStoreName"><a href="#">{card.storeName}</a></p>
-                            <p className="price">$ {card.price}</p>
+                            <p className="price">$ {card.price.toLocaleString()}</p>
                         </div>
                     </div>
                 ))

@@ -22,12 +22,12 @@ const ModalReview = ({ isOpen, onClose }) => {
             id: 1,
             reviewImage: "./images/reviewPic1.jpg",
             idPic: "./images/exp-id-pic-1.png",
-            idName: "文仔",
+            idName: "Amber",
             idStoneLv: "./images/tag-stoneLV.svg",
-            expDate: "2024 年 12 月 13 日",
+            expDate: "2020 年 12 月 20 日",
             courseName: "Overloading 戒指 | 純銀 | 送禮自用",
             courseId: "c01",
-            expText: "市面上的評論幾乎都在3行內結束，可能也跟使用者的習慣有關，長篇一點的可以用...藏起來像下面那樣?。老師很讚，推推",
+            expText: "小有老師很溫柔講解很仔細，中途看大家有點意識渙散還會講一些幽默的故事，空間環境舒適明亮，作品更是美得不像話，可惜沒有遇到店貓來上班，但整體體驗下來超讚的，大力推推!",
 
         },
         {

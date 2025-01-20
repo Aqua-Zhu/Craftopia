@@ -288,7 +288,7 @@ function ClassPage() {
               </ul>
             </div>
             <div className="buy">
-              <p>$1200起</p>
+              <p>$1,200起</p>
               <button onClick={handleOpenModalRsv}>立即預約</button>
               {/* <figure id="heart"><img src="./images/icon-heart.svg" alt="" /></figure> */}
               <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' />
@@ -354,18 +354,12 @@ function ClassPage() {
         <section className='sectionClass' id="experience">
           <div className="expTop">
             <figure><img src="./images/title_Exp.svg" alt="最新心得足跡" className="titlePic" id="titleExp" /></figure>
-            {/* <a className="seemore-btn" onClick={handleOpenModalReview}> */}
-            {/* ModalReview 元件 */}
-            {/* <ModalReview isOpen={isModalReviewOpen} onClose={handleCloseModalReview} />
-              <img className="ball" src="./images/Vector-circle-b.png" alt="" />
-              <span className="font">see all(485)</span>
-              <img className="arr" src="./images/Vector-arr.png" alt="" />
-            </a> */}
+          
             <button className="seemore-btn" onClick={handleOpenModalReview}>
               {/* ModalReview 元件 */}
               <ModalReview isOpen={isModalReviewOpen} onClose={handleCloseModalReview} />
               <img className="ball" src="./images/Vector-circle-b.png" alt="" />
-              <span className="font">see all(485)</span>
+              <span style={{letterSpacing: "2px"}} className="font">See all (48)</span>
               <img className="arr" src="./images/Vector-arr.png" alt="" />
             </button>
           </div>
@@ -393,7 +387,7 @@ function ClassPage() {
           <figure className="blobs" id="blobs-5" data-aos="fade-up" data-aos-duration="1800"></figure>
           <figure className="blobsw" id="blobs-6" data-aos="fade-up" data-aos-duration="1800"></figure>
           <figure className="blobs" id="blobs-7" data-aos="fade-up" data-aos-duration="1800"></figure>
-          <figure className="blobs" id="blobs-8" data-aos="fade-up" data-aos-duration="1800"></figure>
+          {/* <figure className="blobs" id="blobs-8" data-aos="fade-up" data-aos-duration="1800"></figure> */}
           <figure className="blobs" id="blobs-9" data-aos="fade-up" data-aos-duration="800"></figure>
           <figure className="blobs" id="blobs-5-2" data-aos="fade-up" data-aos-duration="800"></figure>
           <figure className="blobsw" id="blobs-6-2" data-aos="fade-up" data-aos-duration="800"></figure>
@@ -466,7 +460,7 @@ function ClassPage() {
               </div>
               <div id="FeeNext">
                 <div className="totalFee">金額小計
-                  <span id="rsvTolFee">${totalFee}</span>
+                  <span id="rsvTolFee">${totalFee.toLocaleString()}</span>
                 </div>
                 <button className="nextStep" onClick={handleNextStep}>下一步
 
@@ -495,7 +489,7 @@ function ClassPage() {
               <section className="rsvPayContent sectionClass">
                 <h3>預約內容</h3>
                 <div className="rsvPayContentWrap">
-                  <figure id="payPic"><img src="./images/courseImg-1.jpg" alt="" /></figure>
+                  <figure id="payPic"><img src="./images/courseImg-1.JPG" alt="" /></figure>
                   <div id="payCourse">
                     <h4>Overloading 戒指 | 純銀 | 送禮自用送禮自用送禮自用送禮自用</h4>
                     <p id="studioName">小自在工藝空間</p>
@@ -544,7 +538,7 @@ function ClassPage() {
                       </div>
                       <div className="rsvPlan" id="payFee">
                         <p>金額小計</p>
-                        <p id="fee">${totalFee}</p>
+                        <p id="fee">${totalFee.toLocaleString()}</p>
                       </div>
 
                     </div>

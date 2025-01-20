@@ -491,8 +491,8 @@
             p {
                 display: flex;
                 font-size: $font-size-xm;
-                font-weight: $font-weight-m;
-                color: $deep;
+                
+                color: $color-neutral-80;
                 align-items: center;
                 margin: 30px 18%;
                 line-height: 1.5rem;
@@ -512,6 +512,7 @@
                     display: inline-block;
                     margin: 20px 10px;
                     position: relative;
+                    font-weight: $font-weight-medium;
 
                     span {
                         position: relative;
@@ -551,14 +552,11 @@
         margin: 0;
 
         #shop-intro {
+            justify-self: center;
             width: 60%;
-            margin: auto;
+            margin: 30px 0 30px;
 
             .top {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-
                 img {
                     width: 20%;
                 }
@@ -635,16 +633,6 @@
 
     @media ($mediaMdDown) {
         width: 100%;
-
-        #content-shop {
-            #box-list {
-                margin: auto;
-            }
-        }
-
-        #lesson-shop {
-            margin: auto;
-        }
     }
 }
 
@@ -721,9 +709,9 @@
 
         .classCard {
             position: relative;
-            width: 30%;
+            width: 40%;
             height: auto;
-            margin-right: 140px;
+            margin-right: 56px;
             margin-bottom: 50px;
 
             div {
@@ -1005,6 +993,7 @@
 /*查看全部按鈕*/
 
 .see-btn {
+    
     font-family: "Braah One", serif;
     display: flex;
     width: 150px;
@@ -1016,6 +1005,9 @@
     cursor: pointer;
     align-items: center;
     position: relative;
+
+    color: #483D3F;
+    letter-spacing: 2px;
 
     span {
         margin-left: 10px;
@@ -1040,7 +1032,7 @@
     &:hover {
         // transition: .3s;
         // transform: scale(1.1);
-        font-size: $font-size-l;
+        //font-size: $font-size-l;
 
         .ball-shop {
             filter: hue-rotate(30deg) brightness(140%);
@@ -1123,15 +1115,16 @@
 
     .share-btn {
         margin-left: 70%;
-
-        .seemore-btn {
+        .seemore-btn{
             background: none;
             border: none;
             font-family: "Braah One", serif;
             font-weight: 600;
             font-size: $font-size-m;
-
-            .font {
+            
+            color: #483D3F;
+            letter-spacing: 2px;
+            .font{
                 width: 80%;
             }
         }
@@ -1178,6 +1171,14 @@
 
         .share-btn {
             margin: 0;
+
+            .seemore-btn{
+               
+                .font{
+                    width: 100%;
+                }
+            }
+            
         }
     }
 }

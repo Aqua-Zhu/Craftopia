@@ -362,16 +362,13 @@
 
 
             .list-row.light {
-
                 .quest-mark {
                     background-color: $color-bg-dark;
                 }
-
                 .QAset {
                     .question {
                         background-color: $color-bg-dark;
                     }
-
                     .answer {
                         &::before {
                             border-color: $color-bg-dark;

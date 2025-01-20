@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { GoogleMap, useJsApiLoader, Marker, InfoWindow, } from '@react-google-maps/api';
 
 import Hearttoggle from "./Hearttoggle";
+import Hearttoggle2 from "./Hearttoggle2";
+
 
 
 
@@ -494,7 +496,6 @@ const MyGmap = ({ filteredStore }) => {
 
 
 
-
             <div
                 className={`map-overlay ${selectedMarker ? "active" : ""}`}
                 style={{
@@ -521,7 +522,13 @@ const MyGmap = ({ filteredStore }) => {
                         <div className="content-bottom">
                             <div className="storeTitle">
                                 <h3><a href="#">{selectedMarker.storeName}</a></h3>
-                                <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' />
+                                {/* <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' /> */}
+
+
+                                <Hearttoggle2  defaultChecked={false}></Hearttoggle2>
+
+
+
                             </div>
 
                             <div className="storeDetail">

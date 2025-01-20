@@ -8,6 +8,24 @@
     font-family: 'Noto Sans TC';
 }
 
+
+.icons-heart2 {
+    width: 24px;
+    cursor: pointer;
+    z-index: 20;
+
+    img {
+        transition: 0.3s;
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+}
+
+
+
 .icons-heart {
     width: 24px;
     cursor: pointer;
@@ -184,9 +202,7 @@
 .blob-11,
 .blob-15,
 .blob-21,
-.blob-19,
-.about-blob1,
-.about-blob2 {
+.blob-19 {
     animation: shake-slow2;
     animation-duration: 7s;
     animation-timing-function: ease-in-out;
@@ -196,7 +212,7 @@
 .blob-3,
 .blob-8,
 .blob-12,
-.blob-16,
+
 .blob-20,
 .about-blob6 {
     animation: shake-slow3;
@@ -207,8 +223,7 @@
 
 .blob-4,
 .blob-17,
-.blob-5,
-.about-blob5 {
+.blob-5 {
     animation: shake-slow2;
     animation-duration: 9s;
     animation-timing-function: ease-in-out;
@@ -250,6 +265,7 @@
         display: none;
     }
 
+
     /*漢堡*/
     .navigation {
         display: flex;
@@ -260,6 +276,8 @@
             justify-content: flex-end;
             list-style: none;
             padding: 0;
+
+
 
             .first {
                 position: relative;
@@ -289,10 +307,6 @@
                         }
                     }
                 }
-
-
-
-
             }
         }
 
@@ -305,7 +319,7 @@
             align-self: center;
             cursor: pointer;
             transition: .5s;
-
+            
             &:hover {
                 transition: .5s;
                 transform: scale(1.1);
@@ -652,6 +666,7 @@
             z-index: 950;
             line-height: $font-size-xxl;
             font-weight: $font-weight-bold;
+            color: #483D3F;
 
             span {
                 background-color: $color-gold-primary;
@@ -782,7 +797,7 @@
 
     #tool {
         position: absolute;
-        width: 25%;
+        width:18%;
         z-index: 888;
         bottom: 200px;
     }
@@ -1357,7 +1372,7 @@
 /*活動資訊*/
 #activity {
     position: relative;
-    padding-bottom: 500px;
+    padding-bottom: 300px;
 
     .Info-btn {
         margin: 3% 0 0 35%;
@@ -1407,6 +1422,8 @@
 
             p {
                 font-size: $font-size-m;
+                color: hwb(349 24% 72% / 0.8);
+                margin: 1rem 0;
             }
 
             h2 {
@@ -1455,16 +1472,16 @@
     /*裝飾區*/
     .blob-12 {
         position: absolute;
-        width: 700px;
+        width: 500px;
         left: 80px;
-        top: 750px;
+        top: 650px;
         z-index: 888;
     }
 
     .blob-13 {
         position: absolute;
         width: 500px;
-        right: 5px;
+        right: -5px;
         top: 20px;
     }
 
@@ -1648,9 +1665,12 @@
 }
 
 /*關於我們大色塊*/
+
 #feature-all {
-    background-image: url('./images/about-bg-deep.png');
-    background-size: cover;
+    // background-image: url('./images/about-bg-deep.png');
+    background-image: url('./images/BG-texture-400-dark.png');
+    background-repeat: repeat;
+
     mask-image: url('./images/us-top.png');
     mask-size: cover;
     mask-repeat: no-repeat;
@@ -1658,12 +1678,14 @@
 
     padding-top: 200px;
     position: relative;
-    /*關於我們*/
 
+    /*關於我們*/
     #about {
         position: relative;
         z-index: 998;
         margin-bottom: 200px;
+        color: #483D3F;
+
 
         .title {
             width: 15%;
@@ -1720,6 +1742,7 @@
             P {
                 margin: 30px 0;
                 text-align: center;
+                line-height: 1.8rem;
             }
         }
 
@@ -1854,69 +1877,93 @@
                 position: relative;
             }
 
-            .featureInside {
+            .pointblob.feat1 {
+                &:hover {
+                    .featureInside {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
+
+                    .feature-outside1 {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
+                }
+            }
+
+            .featureInside,
+            .featureInside2 {
                 filter: drop-shadow(10px 10px 20px $color-coffee-dark);
                 position: relative;
-                animation: shake-updown;
-                animation-duration: 2s;
-                animation-timing-function: ease-in-out;
-                animation-iteration-count: infinite;
-
             }
 
             .feature-outside {
                 position: absolute;
                 width: 80%;
-                animation: shake-updown;
-                animation-duration: 2s;
-                animation-timing-function: ease-in-out;
-                animation-iteration-count: infinite;
             }
 
             .feature-outside1,
             .feature-outside3 {
                 top: 5%;
                 left: 10%;
-                animation: shake-updown;
-                animation-duration: 2s;
-                animation-timing-function: ease-in-out;
-                animation-iteration-count: infinite;
             }
-
-
 
             .feat2 {
                 margin-top: 150px;
 
-                .featureInside2 {
-                    filter: drop-shadow(10px 10px 20px $color-coffee-dark);
-                    animation: shake-ro-updown;
-                    animation-duration: 2s;
-                    animation-timing-function: ease-in-out;
-                    animation-iteration-count: infinite;
+                &:hover {
+                    .featureInside2 {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
+
+                    .feature-outside2 {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
                 }
 
                 .feature-outside2 {
                     top: 8%;
                     left: 10%;
-                    animation: shake-ro-updown;
-                    animation-duration: 2s;
-                    animation-timing-function: ease-in-out;
-                    animation-iteration-count: infinite;
+                }
+            }
+
+            .feat3 {
+                &:hover {
+                    .featureInside {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
+
+                    .feature-outside3 {
+                        animation: shake-updown;
+                        animation-duration: 2s;
+                        animation-timing-function: ease-in-out;
+                        animation-iteration-count: infinite;
+                    }
                 }
             }
 
             article {
                 margin: 0 50px;
-
                 text-align: center;
 
                 p {
-                    color: aliceblue;
+                    color: #fff;
                     margin: 15px 0;
                 }
             }
-
         }
 
         .last {
@@ -1928,7 +1975,8 @@
             color: $deep;
 
             p {
-                color: aliceblue;
+                color: #fff;
+                font-family: braah one;
                 font-size: 32px;
                 line-height: 3rem;
             }
@@ -1946,13 +1994,16 @@
                     display: flex;
                     align-items: center;
                     width: 170px;
-                    height: 70px;
+                    height: 64px;
                     transition: .3s;
-
 
                     &:hover {
                         transform: scale(1.1);
-                        transition: .3s;
+
+                        img {
+                            animation: arrowRight 1.2s;
+                            animation-iteration-count: infinite;
+                        }
                     }
 
                     img {
@@ -1968,7 +2019,7 @@
                     padding: 10px 20px;
                     border-radius: 99px;
                     border: 3px white solid;
-                    background-color: $btn-grey;
+                    // background-color: $btn-grey;
                     cursor: pointer;
                 }
 
@@ -2063,7 +2114,7 @@
 
     .blob-16 {
         position: absolute;
-        width: 800px;
+        width: 700px;
         left: -120px;
         top: 900px;
         z-index: 888;
@@ -2095,9 +2146,9 @@
 
     .blob-20 {
         position: absolute;
-        width: 750px;
+        width: 650px;
         right: -200px;
-        bottom: 150px;
+        bottom: 0px;
         z-index: 888;
     }
 
@@ -2120,7 +2171,7 @@ body {
     overflow-x: hidden; //Yuan-qa
     font-family: "Noto Sans TC", sans-serif; //Yuan-qa
     font-weight: 400; //Yuan-qa
-    letter-spacing: 2px; //Yuan-qa
+    color:#222;
 }
 
 /*頁尾區*/
@@ -2237,9 +2288,9 @@ footer {
 
 .swal-overlay {
     background-color: transparent;
-    top:65px;
+    top: 65px;
     right: unset;
-    bottom:unset;
+    bottom: unset;
 
     .swal-modal {
         // border: $color-brown-primary solid;
@@ -2248,16 +2299,17 @@ footer {
         margin-right: 20px;
         display: flex;
         background-color: $color-deepBrown-medium;
-        box-shadow:2px 2px 8px #483d3f52;
+        box-shadow: 2px 2px 8px #483d3f52;
 
         outline: #9F5B44 dashed 2px;
         outline-offset: -6px;
 
         animation: myAnim 2.3s ease-in-out 0s 1 normal forwards;
+
         .swal-text {
             margin-top: unset;
             margin: auto;
-            color:$color-neutral-100;
+            color: $color-neutral-100;
         }
 
     }

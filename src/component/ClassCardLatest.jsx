@@ -13,7 +13,7 @@ function ClassCardLatest() {
         duration: '2',
         courseName: '簡易個性化陶瓷製作體驗課',
         storeName: '小自在工藝空間',
-        price: '2299',
+        price: 2299,
         photo: './images/classphoto-01.png',
     },
     {
@@ -22,7 +22,7 @@ function ClassCardLatest() {
         duration: '4',
         courseName: '陶藝進階挑戰！打造屬於自己的陶器吧！',
         storeName: '小自在工藝空間',
-        price: '1599',
+        price: 1599,
         photo: './images/classphoto-02.jpg',
     },
     {
@@ -31,7 +31,7 @@ function ClassCardLatest() {
         duration: '3',
         courseName: '居家擺飾陶器創作體驗',
         storeName: '小自在工藝空間',
-        price: '999',
+        price: 999,
         photo: './images/classphoto-03.jpg',
     },
     {
@@ -40,7 +40,7 @@ function ClassCardLatest() {
         duration: '1',
         courseName: '個性化陶瓷裝飾花瓶製作課',
         storeName: '小自在工藝空間',
-        price: '1888',
+        price: 1888,
         photo: './images/classphoto-04.jpg',
     },
     {
@@ -49,8 +49,8 @@ function ClassCardLatest() {
         duration: '2',
         courseName: '暖心咖啡杯拉胚體驗課   這個冬天就用親手做的咖啡杯！ ',
         storeName: '小自在工藝空間',
-        price: '1999',
-        photo: './images/classphoto-05.jpg',
+        price: 1999,
+        photo: './images/course/course-pottery07.jpg',
     },
     {
         id: 6,
@@ -58,8 +58,8 @@ function ClassCardLatest() {
         duration: '4',
         courseName: '讓心意化為陶土的形狀『杯碗設計課程』 ',
         storeName: '小自在工藝空間',
-        price: '2499',
-        photo: './images/classphoto-06.jpg',
+        price: 2499,
+        photo: './images/course/course-pottery01.jpg',
     }]
     useEffect(() => {
         AOS.init();
@@ -72,6 +72,7 @@ function ClassCardLatest() {
 
     return (
         <>
+        <div className="class-row" data-aos="fade-up">
             {
                 course.slice(0, visibleMore).map((course) => {
                     return (
@@ -82,10 +83,10 @@ function ClassCardLatest() {
                                     <p>See More <img src="./images/icons-arrowRightBold.svg" alt="" /></p>
                                     <img className="photo" src={course.photo} alt="" />
 
-                                    <div className="tagHotorNew ">
-                                        <img src="./images/labels-hot.png" alt="" />
-                                        <img src="./images/labels-new.png" alt="" />
-                                    </div>
+                                    {/* <div className="tagHotorNew ">
+                                        <img src="./images/icon-tag/labels-hot.png" alt="" />
+                                        <img src="./images/icon-tag/labels-new.png" alt="" />
+                                    </div> */}
                                 </Link>
                             </figure>
                             <div className="classTag">
@@ -98,7 +99,7 @@ function ClassCardLatest() {
                             </div>
                             <div className="classPrice">
                                 <p className="classStoreName"><a href="#">{course.storeName}</a></p>
-                                <p className="price">$ {course.price}</p>
+                                <p className="price">$ {course.price.toLocaleString()}</p>
                             </div>
                         </div>
                     )
@@ -106,6 +107,7 @@ function ClassCardLatest() {
                 })
 
             }
+            </div>
             {visibleMore < course.length && (
                 <>
                     <button className="see-btn" onClick={handleSeeMore} data-aos="fade-left">

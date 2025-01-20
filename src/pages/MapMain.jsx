@@ -11,6 +11,7 @@ import 'aos/dist/aos.css';
 import 'csshake/dist/csshake.min.css';
 import TopbarB from '../component/TopbarB';
 import { Link } from 'react-router-dom';
+import Hearttoggle2 from '../component/Hearttoggle2';
 
 
 
@@ -114,6 +115,8 @@ function MapMain() {
                       <div className="storeName">
                         <h3><a href="#">{store.storeName}</a></h3>
                         <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' />
+
+                         {/* <Hearttoggle2  defaultChecked={false}></Hearttoggle2> */}
                       </div>
                       <div className="storeDetail">
 

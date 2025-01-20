@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Hearttoggle from "./Hearttoggle";
+import Hearttoggle2 from "./Hearttoggle2";
 
 // 變數名稱大家可以改成寫死的文字或是自己的資料
 
@@ -13,7 +14,7 @@ function ClassCardLatestYuan() {
         duration: '2',
         courseName: '簡易個性化陶瓷製作體驗課',
         storeName: '小自在工藝空間',
-        price: '2299',
+        price: 2299,
         photo:'./images/classphoto-01.png',
     },
     {
@@ -22,7 +23,7 @@ function ClassCardLatestYuan() {
         duration: '4',
         courseName: '陶藝進階挑戰！打造屬於自己的陶器吧！',
         storeName: '小自在工藝空間',
-        price: '1599',
+        price: 1599,
         photo:'./images/classphoto-02.jpg',
     },
     {
@@ -31,7 +32,7 @@ function ClassCardLatestYuan() {
         duration: '3',
         courseName: '居家擺飾陶器創作體驗',
         storeName: '小自在工藝空間',
-        price: '999',
+        price: 998,
         photo:'./images/classphoto-03.jpg',
     },
     ]
@@ -48,8 +49,8 @@ function ClassCardLatestYuan() {
                             <img className="photo" src={course.photo} alt="" />
 
                             <div className="tagHotorNew ">
-                                <img src="./images/labels-hot.png" alt="" />
-                                <img src="./images/labels-new.png" alt="" />
+                                {/* <img src="./images/icon-tag/labels-hot.png" alt="" /> */}
+                                <img src="./images/icon-tag/labels-new.png" alt="" />
                             </div>
                         </Link>
                     </figure>
@@ -60,12 +61,14 @@ function ClassCardLatestYuan() {
                     <div className="classTitle">
                         <h3><a href="#">{course.courseName}</a></h3>
                         <Hearttoggle heartFillId='heartfill5' heartStrikeId='heartstrike5' defaultChecked={true} />
+                        {/* <Hearttoggle2  defaultChecked={true}></Hearttoggle2> */}
                     </div>
                     <div className="classPrice">
                         <p className="classStoreName"><a href="#">{course.storeName}</a></p>
-                        <p className="price">$ {course.price}</p>
+                        <p className="price">$ {course.price.toLocaleString()}</p>
                     </div>
                 </div>
+
             )
 
         })
