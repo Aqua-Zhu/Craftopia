@@ -1878,10 +1878,13 @@
             width: 25%;
             justify-self: center;
         }
-
+        header{
+            display: flex;
+            justify-content: center;
+        }
         .feat-content {
             display: flex;
-
+            justify-content: center;
             .pointblob {
                 position: relative;
             }
